@@ -4,9 +4,13 @@ import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import ProductDetail from '@/components/ProductDetail';
-import { getProductById } from '@/lib/products';
+import { ALL_PRODUCTS, getProductById } from '@/lib/products';
 
 type Props = { params: Promise<{ id: string }> };
+
+export function generateStaticParams() {
+  return ALL_PRODUCTS.map((p) => ({ id: p.id }));
+}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params;
