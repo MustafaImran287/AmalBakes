@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useCart } from '@/context/CartContext';
 import { formatPrice } from '@/lib/products';
+import { assetUrl } from '@/lib/basePath';
 import styles from './CartView.module.css';
 
 const WHATSAPP_NUMBER = '1234567890';
@@ -51,7 +52,7 @@ export default function CartView() {
             {item.image && (
               <div className={styles.rowThumb}>
                 <Image
-                  src={item.image!.startsWith('/') ? item.image! : `/cake%20products/${item.image}`}
+                  src={item.image!.startsWith('/') ? item.image! : assetUrl(`/cake%20products/${item.image}`)}
                   alt={item.title}
                   fill
                   className={styles.rowThumbImg}

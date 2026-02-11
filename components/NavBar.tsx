@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useCart } from '@/context/CartContext';
+import { assetUrl } from '@/lib/basePath';
 import styles from './NavBar.module.css';
 
 const NAV_LINKS = [
@@ -24,7 +25,7 @@ export default function NavBar() {
         <div className={styles.navLeft}>
           <Link href="/" className={styles.logoLink} aria-label="Amal Bakes Home">
             <Image
-              src="/Logos/2.png"
+              src={assetUrl('/Logos/2.png')}
               alt="Amal Bakes"
               width={56}
               height={56}

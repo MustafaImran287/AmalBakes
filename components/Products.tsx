@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import styles from './Products.module.css';
 import { ALL_PRODUCTS, formatPrice, getProductImageUrl, type ProductCategory } from '@/lib/products';
+import { assetUrl } from '@/lib/basePath';
 
 const FILTERS: { value: ProductCategory; label: string }[] = [
   { value: 'all', label: 'All' },
@@ -23,7 +24,7 @@ export default function Products() {
     <section id="products" className={styles.section}>
       <div className={styles.inner}>
         <div className={styles.badge}>
-          <Image src="/Logos/3.png" alt="" width={80} height={80} className={styles.badgeImg} />
+          <Image src={assetUrl('/Logos/3.png')} alt="" width={80} height={80} className={styles.badgeImg} />
         </div>
         <h2 className={styles.title}>Our Products</h2>
         <p className={styles.subtitle}>

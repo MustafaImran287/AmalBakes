@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import styles from './Footer.module.css';
 
+import { assetUrl } from '@/lib/basePath';
+
 const SOCIAL = [
   { label: 'Facebook', href: 'https://www.facebook.com/amalbakes', icon: '/icons/icons8-facebook-96.png' },
   { label: 'Instagram', href: 'https://www.instagram.com/amalbakes', icon: '/icons/icons8-insta-96.png' },
@@ -19,7 +21,7 @@ export default function Footer() {
     <footer id="footer" className={styles.footer}>
       <div className={styles.inner}>
         <div className={styles.brand}>
-          <Image src="/Logos/3.png" alt="Amal Bakes" width={72} height={72} className={styles.logo} />
+          <Image src={assetUrl('/Logos/3.png')} alt="Amal Bakes" width={72} height={72} className={styles.logo} />
           <p className={styles.tagline}>Amal Bakes — Cakes & Cookies</p>
           <p className={styles.aboutDesc}>
             Handcrafted cakes and cookies from Rawalpindi & Islamabad. We bake fresh to order and deliver locally—because every celebration deserves something special.
@@ -46,7 +48,7 @@ export default function Footer() {
             {SOCIAL.map(({ label, href, icon }) => (
               <li key={label}>
                 <a href={href} target="_blank" rel="noopener noreferrer" aria-label={label}>
-                  <Image src={icon} alt="" width={28} height={28} className={styles.socialIcon} />
+                  <Image src={assetUrl(icon)} alt="" width={28} height={28} className={styles.socialIcon} />
                 </a>
               </li>
             ))}

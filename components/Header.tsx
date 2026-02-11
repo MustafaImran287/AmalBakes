@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useCart } from '@/context/CartContext';
+import { assetUrl } from '@/lib/basePath';
 import styles from './Header.module.css';
 
 const NAV_LINKS = [
@@ -23,7 +24,7 @@ export default function Header() {
       <div className={styles.heroImage}>
         <div className={styles.heroImageInner}>
           <Image
-            src="/hero-cake.png"
+            src={assetUrl('/hero-cake.png')}
             alt="Handcrafted cake with fresh flowers - Amal Bakes"
             fill
             priority
@@ -42,7 +43,7 @@ export default function Header() {
         <div className={styles.navLeft}>
           <Link href="#home" className={styles.logoLink} aria-label="Amal Bakes Home">
             <Image
-            src="/Logos/2.png"
+            src={assetUrl('/Logos/2.png')}
             alt="Amal Bakes"
             width={120}
             height={120}

@@ -210,12 +210,15 @@ export const ALL_PRODUCTS: Product[] = [
   },
 ];
 
+import { basePath } from './basePath';
+
 export const IMAGE_BASE = '/cake%20products';
 export const COOKIES_IMAGE_BASE = '/cookies%20products';
 
 export function getProductImageUrl(product: Product): string {
   const base = product.category === 'cookies' ? COOKIES_IMAGE_BASE : IMAGE_BASE;
-  return `${base}/${product.image}`;
+  const path = `${base}/${product.image}`;
+  return basePath ? `${basePath}${path}` : path;
 }
 
 export function getProductById(id: string): Product | undefined {

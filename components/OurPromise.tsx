@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { assetUrl } from '@/lib/basePath';
 import styles from './OurPromise.module.css';
 
 const PROMISES = [
@@ -37,7 +38,7 @@ export default function OurPromise() {
           {PROMISES.map((item) => (
             <li key={item.title} className={styles.item}>
               <div className={styles.iconWrap}>
-                <Image src={item.icon} alt="" width={48} height={48} className={styles.iconImg} />
+                <Image src={assetUrl(item.icon)} alt="" width={48} height={48} className={styles.iconImg} />
               </div>
               <h3 className={styles.itemTitle}>{item.title}</h3>
               <p className={styles.itemDesc}>{item.description}</p>

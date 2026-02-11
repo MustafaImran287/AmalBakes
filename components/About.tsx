@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { assetUrl } from '@/lib/basePath';
 import styles from './About.module.css';
 
 export default function About() {
@@ -7,7 +8,7 @@ export default function About() {
       <div className={styles.wrap}>
         <div className={styles.imageWrap}>
           <Image
-            src="/Logos/2.png"
+            src={assetUrl('/Logos/2.png')}
             alt="Amal Bakes"
             width={280}
             height={280}
