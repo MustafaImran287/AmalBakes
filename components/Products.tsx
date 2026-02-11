@@ -54,7 +54,7 @@ export default function Products() {
                     alt={item.title}
                     fill
                     className={styles.previewImage}
-                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 20vw"
+                    sizes="(max-width: 399px) 100vw, (max-width: 640px) 50vw, (max-width: 1024px) 25vw, 20vw"
                   />
                 </div>
                 <div className={styles.previewBody}>

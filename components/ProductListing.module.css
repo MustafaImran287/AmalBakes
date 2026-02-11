@@ -152,6 +152,8 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .card:hover {
@@ -169,6 +171,9 @@
   width: 100%;
   aspect-ratio: 4 / 3;
   background: rgba(255, 247, 173, 0.3);
+  flex-shrink: 0;
+  overflow: hidden;
+  min-height: 0;
 }
 
 .cardImage {

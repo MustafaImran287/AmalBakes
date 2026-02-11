@@ -4,8 +4,8 @@ import styles from './Footer.module.css';
 import { assetUrl } from '@/lib/basePath';
 
 const SOCIAL = [
-  { label: 'Facebook', href: 'https://www.facebook.com/amalbakes', icon: '/icons/icons8-facebook-96.png' },
-  { label: 'Instagram', href: 'https://www.instagram.com/amalbakes', icon: '/icons/icons8-insta-96.png' },
+  { label: 'Facebook', href: 'https://www.facebook.com/share/1J1gY6yrku/?mibextid=wwXIfr', icon: '/icons/icons8-facebook-96.png' },
+  { label: 'Instagram', href: 'https://www.instagram.com/amal.bakes.2025?igsh=MXBqaG1mZHhxemFjNQ==', icon: '/icons/icons8-insta-96.png' },
 ];
 
 const CONTACT = {
