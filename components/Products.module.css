@@ -1,0 +1,295 @@
+.section {
+  width: 100%;
+  max-width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.65) 0%, rgba(255, 247, 173, 0.28) 50%, rgba(255, 169, 249, 0.18) 100%);
+  box-shadow: var(--shadow);
+  padding: 1rem 0.75rem 1rem;
+  box-sizing: border-box;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.inner {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  min-height: 0;
+  padding: 0 0.5rem;
+  box-sizing: border-box;
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding: 1.25rem 1rem 1.5rem;
+  }
+  .inner {
+    padding: 0 1rem;
+  }
+}
+
+.badge {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.badgeImg {
+  border-radius: 50%;
+  filter: drop-shadow(0 2px 12px rgba(0, 0, 0, 0.08));
+}
+
+.title {
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-align: center;
+  margin-bottom: 0.25rem;
+  color: var(--text-dark);
+}
+
+.subtitle {
+  text-align: center;
+  color: var(--text-muted);
+  max-width: 480px;
+  margin: 0 auto 0.75rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.01em;
+  line-height: 1.5;
+}
+
+.filterWrap {
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.filterBtn {
+  padding: 0.4rem 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 169, 249, 0.35);
+  border-radius: 999px;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.filterBtn:hover {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(255, 169, 249, 0.5);
+}
+
+.filterBtnActive {
+  background: linear-gradient(135deg, var(--color-pink) 0%, #e88ade 100%);
+  color: #fff;
+  border-color: transparent;
+}
+
+.filterBtnActive:hover {
+  color: #fff;
+}
+
+/* Grid: 4 columns on desktop, all cards same height */
+.previewGrid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.1rem;
+  align-items: stretch;
+  margin-bottom: 1rem;
+  width: 100%;
+  max-width: 100%;
+  flex: 1;
+  min-height: 0;
+  align-content: center;
+  box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+  .previewGrid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+/* Full thumbnail CARD – same height as siblings, shadow on whole card */
+.previewCard {
+  border-radius: 10px;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.08),
+    0 0 16px rgba(0, 0, 0, 0.12),
+    0 0 32px rgba(0, 0, 0, 0.1),
+    0 6px 16px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.previewCard:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.08),
+    0 0 24px rgba(0, 0, 0, 0.14),
+    0 0 48px rgba(0, 0, 0, 0.12),
+    0 12px 28px rgba(0, 0, 0, 0.15),
+    0 8px 24px rgba(255, 169, 249, 0.2);
+}
+
+/* Inner wrapper: fills card, clips content to rounded corners */
+.previewCardInner {
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  background: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  transition: border-color 0.3s ease;
+}
+
+.previewCard:hover .previewCardInner {
+  border-color: rgba(255, 169, 249, 0.25);
+}
+
+/* Thumbnail: no separate shadow (card has full shadow) */
+.previewImageWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.previewImageWrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 60%, rgba(0, 0, 0, 0.03) 100%);
+  pointer-events: none;
+}
+
+.previewImage {
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.previewCard:hover .previewImage {
+  transform: scale(1.03);
+}
+
+/* Text area: fills remaining space, same height across cards */
+.previewBody {
+  padding: 0.5rem 0.65rem 0.65rem;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1;
+  min-height: 0;
+}
+
+/* Title + price on one line */
+.previewTitleRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.4rem;
+  min-width: 0;
+}
+
+.previewName {
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: #1a1a1a;
+  line-height: 1.25;
+  margin: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  flex: 1;
+  min-width: 0;
+}
+
+.previewPrice {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-pink);
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.previewIngredients {
+  font-size: 0.7rem;
+  color: #4a4a4a;
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  margin: 0;
+  flex: 1;
+  min-height: 0;
+}
+
+.selectBtn {
+  display: block;
+  width: 100%;
+  margin-top: auto;
+  flex-shrink: 0;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-align: center;
+  background: linear-gradient(135deg, #ffa9f9 0%, #e88ade 100%);
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(255, 169, 249, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.selectBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(255, 169, 249, 0.45);
+  color: var(--white);
+}
+
+/* Explore button */
+.exploreWrap {
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.exploreBtn {
+  display: inline-block;
+  padding: 0.6rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: linear-gradient(135deg, var(--color-pink) 0%, #e88ade 100%);
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(255, 169, 249, 0.3);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.exploreBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(255, 169, 249, 0.4);
+  color: var(--white);
+}
