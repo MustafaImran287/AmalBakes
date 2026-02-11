@@ -1,6 +1,6 @@
 'use client';
 
-const WHATSAPP_NUMBER = '1234567890'; // Replace with real number (country code, no + or 0)
+const WHATSAPP_NUMBER = '923205265991';
 const DEFAULT_MESSAGE = 'Hi, I would like to place an order or ask about your cakes and cookies.';
 
 export default function WhatsAppButton() {

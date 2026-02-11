@@ -47,7 +47,7 @@ export default function NavBar() {
             ))}
             <li className={styles.ctaWrap}>
               <a
-                href="https://wa.me/1234567890?text=Hi%2C%20I%20would%20like%20to%20place%20an%20order."
+                href="https://wa.me/923205265991?text=Hi%2C%20I%20would%20like%20to%20place%20an%20order."
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.orderBtn}
