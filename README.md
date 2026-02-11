@@ -34,4 +34,18 @@ A one-page Next.js website for **Amal Bakes** — Cakes & Cookies.
 - Production build: `npm run build`
 - Start production server: `npm start`
 
+## Deployment (GitHub Actions)
+
+The repo includes a workflow (`.github/workflows/deploy.yml`) that builds and deploys to **Vercel** on every push to `main` and on pull requests (preview).
+
+**Required GitHub secrets** (Repo → Settings → Secrets and variables → Actions):
+
+| Secret             | Where to get it |
+|--------------------|-----------------|
+| `VERCEL_TOKEN`     | [Vercel Account → Tokens](https://vercel.com/account/tokens): create a token and paste it here. |
+| `VERCEL_ORG_ID`    | Vercel dashboard → your project → **Settings → General** → "Project ID" (or run `vercel link` locally and copy from `.vercel/project.json`). |
+| `VERCEL_PROJECT_ID`| Same place as Org ID (also in `.vercel/project.json`). |
+
+**One-time setup:** Import this repo in the [Vercel dashboard](https://vercel.com/new) (or run `vercel` in the project once) so the project exists. Then add the three secrets above. Pushes to `main` will deploy to production; PRs will create preview deployments.
+
 Logos are served from `public/Logos/` (copied from the project `Logos` folder).
