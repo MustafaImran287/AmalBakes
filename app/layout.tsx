@@ -6,8 +6,8 @@ export const metadata: Metadata = {
   title: 'Amal Bakes | Cakes & Cookies',
   description: 'Handcrafted cakes and cookies by Amal Bakes. Order now for celebrations and everyday sweetness.',
   icons: {
-    icon: `${process.env.NEXT_PUBLIC_BASE_PATH || ''}/Logos/1.png`,
-    apple: `${process.env.NEXT_PUBLIC_BASE_PATH || ''}/Logos/1.png`,
+    icon: '/Logos/1.png',
+    apple: '/Logos/1.png',
   },
 };
 

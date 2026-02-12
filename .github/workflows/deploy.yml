@@ -37,6 +37,15 @@ jobs:
       - name: Build with Next.js
         run: npm run build
 
+      - name: Verify static export
+        run: |
+          ls -la out
+          test -d out || (echo "ERROR: out/ directory not found" && exit 1)
+          test -f out/index.html || (echo "ERROR: out/index.html not found" && exit 1)
+
+      - name: Add CNAME for custom domain
+        run: echo "amalbakes.com" > out/CNAME
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:

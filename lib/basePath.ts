@@ -1,10 +1,10 @@
 /**
- * Base path for GitHub Pages (e.g. /Amal-Bakes-Website). Empty when running locally.
- * Set NEXT_PUBLIC_BASE_PATH in the GitHub Actions workflow so assets load correctly.
+ * Root-only deployment (amalbakes.com). No basePath/subpath.
+ * assetUrl() normalizes paths for use at site root.
  */
-export const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+export const basePath = '';
 
 export function assetUrl(path: string): string {
   const p = path.startsWith('/') ? path : `/${path}`;
-  return basePath ? `${basePath}${p}` : p;
+  return p;
 }
