@@ -8,8 +8,10 @@ import { ALL_PRODUCTS, formatPrice, getProductImageUrl, type ProductCategory } f
 
 const FILTERS: { value: ProductCategory; label: string }[] = [
   { value: 'all', label: 'All' },
-  { value: 'cakes', label: 'Cakes' },
+  { value: 'vanilla-cakes', label: 'Vanilla Cakes' },
+  { value: 'chocolate-cakes', label: 'Chocolate Cakes' },
   { value: 'cookies', label: 'Cookies' },
+  { value: 'brownie', label: 'Brownie' },
 ];
 
 export default function ProductListing() {
@@ -40,7 +42,7 @@ export default function ProductListing() {
             )}
             {cart.length > 0 && (
               <a
-                href={`https://wa.me/923205265991?text=${encodeURIComponent(whatsappOrderText)}`}
+                href={`https://wa.me/923365119740?text=${encodeURIComponent(whatsappOrderText)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.orderBtn}
@@ -54,7 +56,7 @@ export default function ProductListing() {
 
       <h1 className={styles.pageTitle}>All Products</h1>
       <p className={styles.pageSubtitle}>
-        Cakes and cookies made with quality ingredients. Filter by category or browse all.
+        Cakes, cookies and brownies made with quality ingredients. Filter by category or browse all.
       </p>
 
       <div className={styles.filterWrap}>

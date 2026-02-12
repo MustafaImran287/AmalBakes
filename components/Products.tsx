@@ -9,8 +9,10 @@ import { assetUrl } from '@/lib/basePath';
 
 const FILTERS: { value: ProductCategory; label: string }[] = [
   { value: 'all', label: 'All' },
-  { value: 'cakes', label: 'Cakes' },
+  { value: 'vanilla-cakes', label: 'Vanilla Cakes' },
+  { value: 'chocolate-cakes', label: 'Chocolate Cakes' },
   { value: 'cookies', label: 'Cookies' },
+  { value: 'brownie', label: 'Brownie' },
 ];
 
 export default function Products() {

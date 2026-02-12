@@ -10,6 +10,8 @@ import styles from './Header.module.css';
 const NAV_LINKS = [
   { label: 'Home', href: '/' },
   { label: 'Products', href: '/products' },
+  { label: 'News', href: '/news' },
+  { label: 'Gallery', href: '/gallery' },
   { label: 'About', href: '/#about' },
   { label: 'Cart', href: '/cart' },
   { label: 'Contact', href: '/#footer' },
@@ -66,7 +68,7 @@ export default function Header() {
             ))}
             <li className={styles.ctaWrap}>
               <a
-                href="https://wa.me/923205265991?text=Hi%2C%20I%20would%20like%20to%20place%20an%20order."
+                href="https://wa.me/923365119740?text=Hi%2C%20I%20would%20like%20to%20place%20an%20order."
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.orderBtn}

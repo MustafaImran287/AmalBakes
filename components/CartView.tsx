@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useCart } from '@/context/CartContext';
@@ -7,23 +8,29 @@ import { formatPrice } from '@/lib/products';
 import { assetUrl } from '@/lib/basePath';
 import styles from './CartView.module.css';
 
-const WHATSAPP_NUMBER = '923205265991';
+const WHATSAPP_NUMBER = '923365119740';
 
 function buildWhatsAppMessage(
   items: { title: string; quantity: number; price: number; size?: string; message?: string }[],
-  totalPrice: number
+  totalPrice: number,
+  deliveryAddress?: string
 ) {
   const lines = items.map(
     (i) =>
       `• ${i.title} x${i.quantity} — ${formatPrice(i.price * i.quantity)}${i.size ? ` (${i.size})` : ''}${i.message ? ` — Message: ${i.message}` : ''}`
   );
-  return `Hi, I'd like to order from Amal Bakes:\n\n${lines.join('\n')}\n\nTotal: ${formatPrice(totalPrice)}`;
+  let msg = `Hi, I'd like to order from Amal Bakes:\n\n${lines.join('\n')}\n\nTotal: ${formatPrice(totalPrice)}`;
+  if (deliveryAddress?.trim()) {
+    msg += `\n\nDelivery address: ${deliveryAddress.trim()}`;
+  }
+  return msg;
 }
 
 export default function CartView() {
   const { items, removeItem, updateQuantity, totalCount, totalPrice, clearCart } = useCart();
+  const [deliveryAddress, setDeliveryAddress] = useState('');
 
-  const whatsappMessage = items.length ? buildWhatsAppMessage(items, totalPrice) : '';
+  const whatsappMessage = items.length ? buildWhatsAppMessage(items, totalPrice, deliveryAddress) : '';
 
   if (items.length === 0) {
     return (
@@ -100,6 +107,19 @@ export default function CartView() {
       </ul>
 
       <div className={styles.footer}>
+        <div className={styles.addressField}>
+          <label htmlFor="delivery-address" className={styles.addressLabel}>
+            Where do you want it delivered?
+          </label>
+          <textarea
+            id="delivery-address"
+            className={styles.addressInput}
+            placeholder="e.g. House 123, Street name, Sector/Area, Rawalpindi or Islamabad"
+            value={deliveryAddress}
+            onChange={(e) => setDeliveryAddress(e.target.value)}
+            rows={3}
+          />
+        </div>
         <p className={styles.total}>
           Total: <strong>{formatPrice(totalPrice)}</strong>
         </p>

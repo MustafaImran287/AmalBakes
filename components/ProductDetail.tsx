@@ -17,6 +17,12 @@ const TABS = [
 
 type TabId = (typeof TABS)[number]['id'];
 
+function getPoundsFromSize(size: string): number {
+  if (!size || !size.toLowerCase().includes('pound')) return 1;
+  const num = parseInt(size, 10);
+  return Number.isNaN(num) || num < 1 ? 1 : num;
+}
+
 export default function ProductDetail({ product }: { product: Product }) {
   const router = useRouter();
   const { addItem } = useCart();
@@ -25,11 +31,16 @@ export default function ProductDetail({ product }: { product: Product }) {
   const [quantity, setQuantity] = useState(1);
   const [activeTab, setActiveTab] = useState<TabId>('description');
 
+  const isCakeByPound = product.category === 'vanilla-cakes' || product.category === 'chocolate-cakes';
+  const pounds = getPoundsFromSize(selectedSize);
+  const unitPrice = isCakeByPound ? product.price * pounds : product.price;
+  const totalPrice = unitPrice * quantity;
+
   const handleAddToBasket = () => {
     addItem({
       productId: product.id,
       title: product.title,
-      price: product.price,
+      price: unitPrice,
       quantity,
       size: selectedSize || undefined,
       message: message.trim() || undefined,
@@ -81,7 +92,10 @@ export default function ProductDetail({ product }: { product: Product }) {
           </div>
           <div className={styles.rightPanel}>
             <h1 className={styles.productTitle}>{product.title}</h1>
-            <p className={styles.productPrice}>{formatPrice(product.price)}</p>
+            <div className={styles.priceBlock}>
+              <p className={styles.productPrice}>{formatPrice(totalPrice)}</p>
+              <p className={styles.productPriceNote}>{formatPrice(unitPrice)} each × {quantity}</p>
+            </div>
             <p className={styles.productDesc}>{product.description}</p>
 
             <div className={styles.field}>

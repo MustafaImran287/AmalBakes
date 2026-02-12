@@ -9,7 +9,7 @@ const SOCIAL = [
 ];
 
 const CONTACT = {
-  phone: '+92 300 1234567',
+  phone: '+92 336 5119740',
   email: 'hello@amalbakes.com',
   cities: 'Rawalpindi & Islamabad',
   country: 'Pakistan',

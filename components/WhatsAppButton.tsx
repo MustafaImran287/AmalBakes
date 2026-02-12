@@ -1,6 +1,6 @@
 'use client';
 
-const WHATSAPP_NUMBER = '923205265991';
+const WHATSAPP_NUMBER = '923365119740';
 const DEFAULT_MESSAGE = 'Hi, I would like to place an order or ask about your cakes and cookies.';
 
 export default function WhatsAppButton() {
