@@ -27,6 +27,7 @@ export default function ProductDetail({ product }: { product: Product }) {
   const router = useRouter();
   const { addItem } = useCart();
   const [selectedSize, setSelectedSize] = useState(product.sizeServing[0] ?? '');
+  const [frosting, setFrosting] = useState<'fresh-cream' | 'butter-cream'>('fresh-cream');
   const [message, setMessage] = useState('');
   const [quantity, setQuantity] = useState(1);
   const [activeTab, setActiveTab] = useState<TabId>('description');
@@ -43,6 +44,7 @@ export default function ProductDetail({ product }: { product: Product }) {
       price: unitPrice,
       quantity,
       size: selectedSize || undefined,
+      frosting: isCakeByPound ? (frosting === 'butter-cream' ? 'Butter cream' : 'Fresh cream') : undefined,
       message: message.trim() || undefined,
       image: getProductImageUrl(product),
     });
@@ -112,6 +114,20 @@ export default function ProductDetail({ product }: { product: Product }) {
                 ))}
               </select>
             </div>
+
+            {isCakeByPound && (
+              <div className={styles.field}>
+                <label className={styles.label}>Frosting</label>
+                <select
+                  className={styles.select}
+                  value={frosting}
+                  onChange={(e) => setFrosting(e.target.value as 'fresh-cream' | 'butter-cream')}
+                >
+                  <option value="fresh-cream">Fresh cream</option>
+                  <option value="butter-cream">Butter cream</option>
+                </select>
+              </div>
+            )}
 
             <div className={styles.field}>
               <label className={styles.label}>Personalized message on cake</label>

@@ -5,18 +5,19 @@ import { assetUrl } from '@/lib/basePath';
 import styles from './Gallery.module.css';
 
 const GALLERY_IMAGES = [
-  { src: '/cake%20products/delicious-cake-with-fruits-cream.jpg', alt: 'Cake with fruits and cream' },
-  { src: '/cake%20products/delicious-cake-with-strawberries.jpg', alt: 'Cake with strawberries' },
-  { src: '/cake%20products/elegant-eco-food-concept-with-flowers-cake.jpg', alt: 'Cake with flowers' },
-  { src: '/cake%20products/diana-light-OYKZNEwdZus-unsplash.jpg', alt: 'Celebration cake' },
-  { src: '/cake%20products/jasmine-bartel-8LtrMQfeDkQ-unsplash.jpg', alt: 'Birthday cake' },
-  { src: '/cake%20products/jonathan-borba-jJ-_AO2C4gw-unsplash.jpg', alt: 'Chocolate cake' },
-  { src: '/cookies%20products/top-view-mix-cookies-with-chocolate-gingerbread-cookies-table.jpg', alt: 'Cookies assortment' },
-  { src: '/cookies%20products/view-baked-cookies-done-by-vegan-bakery.jpg', alt: 'Fresh baked cookies' },
-  { src: '/cookies%20products/plate-sweeties-jar-biscuits.jpg', alt: 'Biscuits and treats' },
-  { src: '/cookies%20products/top-view-sweet-biscuits-with-nuts-presents-light-table.jpg', alt: 'Sweet biscuits' },
-  { src: '/cake%20products/monika-grabkowska-2B-XGHpredg-unsplash.jpg', alt: 'Cake slice' },
-  { src: '/hero-cake.png', alt: 'Amal Bakes hero' },
+  { src: '/cake%20products/Basoc%20Vanilla.jpeg', alt: 'Basic Vanilla' },
+  { src: '/cake%20products/Vanilla%20pineapple.jpeg', alt: 'Vanilla Pineapple' },
+  { src: '/cake%20products/Vanilla%20oreo.jpeg', alt: 'Vanilla Oreo' },
+  { src: '/cake%20products/Three%20milk.jpeg', alt: 'Three Milk' },
+  { src: '/cake%20products/Lotus.jpeg', alt: 'Lotus' },
+  { src: '/cake%20products/Chocolate%20fudge.jpeg', alt: 'Chocolate Fudge' },
+  { src: '/cake%20products/Chocolate%20caramel.jpeg', alt: 'Chocolate Caramel' },
+  { src: '/cake%20products/Chocolate%20oreo.jpeg', alt: 'Chocolate Oreo' },
+  { src: '/cookies%20products/top-view-mix-cookies-with-chocolate-gingerbread-cookies-table.jpg', alt: 'Cookies' },
+  { src: '/cookies%20products/view-baked-cookies-done-by-vegan-bakery.jpg', alt: 'Cookies' },
+  { src: '/cookies%20products/plate-sweeties-jar-biscuits.jpg', alt: 'Biscuits' },
+  { src: '/cookies%20products/top-view-sweet-biscuits-with-nuts-presents-light-table.jpg', alt: 'Sweet treats' },
+  { src: '/hero-cake.png', alt: 'Amal Bakes' },
 ];
 
 export default function Gallery() {

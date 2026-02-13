@@ -208,6 +208,30 @@
   color: var(--color-pink);
 }
 
+.deliveryNote {
+  margin: 0 0 1.25rem 0;
+  padding: 0.65rem 0 0 1rem;
+  border-left: 3px solid var(--color-pink);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-dark);
+}
+
+.noteLead {
+  font-weight: 700;
+  color: var(--color-pink);
+}
+
+.noteItalic {
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+.noteBold {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
 .sendOrderBtn {
   display: inline-block;
   padding: 0.75rem 1.5rem;

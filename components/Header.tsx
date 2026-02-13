@@ -10,6 +10,7 @@ import styles from './Header.module.css';
 const NAV_LINKS = [
   { label: 'Home', href: '/' },
   { label: 'Products', href: '/products' },
+  { label: 'Custom cake', href: '/custom-cake' },
   { label: 'News', href: '/news' },
   { label: 'Gallery', href: '/gallery' },
   { label: 'About', href: '/#about' },

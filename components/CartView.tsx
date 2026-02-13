@@ -11,13 +11,13 @@ import styles from './CartView.module.css';
 const WHATSAPP_NUMBER = '923365119740';
 
 function buildWhatsAppMessage(
-  items: { title: string; quantity: number; price: number; size?: string; message?: string }[],
+  items: { title: string; quantity: number; price: number; size?: string; frosting?: string; message?: string }[],
   totalPrice: number,
   deliveryAddress?: string
 ) {
   const lines = items.map(
     (i) =>
-      `• ${i.title} x${i.quantity} — ${formatPrice(i.price * i.quantity)}${i.size ? ` (${i.size})` : ''}${i.message ? ` — Message: ${i.message}` : ''}`
+      `• ${i.title} x${i.quantity} — ${formatPrice(i.price * i.quantity)}${i.size ? ` (${i.size})` : ''}${i.frosting ? ` — Frosting: ${i.frosting}` : ''}${i.message ? ` — Message: ${i.message}` : ''}`
   );
   let msg = `Hi, I'd like to order from Amal Bakes:\n\n${lines.join('\n')}\n\nTotal: ${formatPrice(totalPrice)}`;
   if (deliveryAddress?.trim()) {
@@ -59,7 +59,7 @@ export default function CartView() {
             {item.image && (
               <div className={styles.rowThumb}>
                 <Image
-                  src={item.image!.startsWith('/') ? item.image! : assetUrl(`/cake%20products/${item.image}`)}
+                  src={item.image!.startsWith('/') ? item.image! : assetUrl(`/cake%20products/${encodeURIComponent(item.image!)}`)}
                   alt={item.title}
                   fill
                   className={styles.rowThumbImg}
@@ -70,6 +70,7 @@ export default function CartView() {
             <div className={styles.rowMain}>
               <span className={styles.rowTitle}>{item.title}</span>
               {item.size && <span className={styles.rowMeta}>Size: {item.size}</span>}
+              {item.frosting && <span className={styles.rowMeta}>Frosting: {item.frosting}</span>}
               {item.message && <span className={styles.rowMeta}>Message: {item.message}</span>}
               <span className={styles.rowPrice}>{formatPrice(item.price * item.quantity)}</span>
             </div>
@@ -122,6 +123,11 @@ export default function CartView() {
         </div>
         <p className={styles.total}>
           Total: <strong>{formatPrice(totalPrice)}</strong>
+        </p>
+        <p className={styles.deliveryNote}>
+          <strong className={styles.noteLead}>Note:</strong>{' '}
+          <em className={styles.noteItalic}>Delivery charges apply based on your location.</em>{' '}
+          <strong className={styles.noteBold}>You&apos;ll pay for delivery when your cake arrives.</strong>
         </p>
         <a
           href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(whatsappMessage)}`}
