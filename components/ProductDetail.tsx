@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import type { Product } from '@/lib/products';
-import { formatPrice, getProductImageUrl } from '@/lib/products';
+import { formatPrice, getProductImageUrl, getProductImageUrls } from '@/lib/products';
 import { useCart } from '@/context/CartContext';
 import styles from './ProductDetail.module.css';
 
@@ -31,6 +31,10 @@ export default function ProductDetail({ product }: { product: Product }) {
   const [message, setMessage] = useState('');
   const [quantity, setQuantity] = useState(1);
   const [activeTab, setActiveTab] = useState<TabId>('description');
+  const [slideIndex, setSlideIndex] = useState(0);
+
+  const imageUrls = getProductImageUrls(product);
+  const hasSlider = imageUrls.length > 1;
 
   const isCakeByPound = product.category === 'vanilla-cakes' || product.category === 'chocolate-cakes';
   const pounds = getPoundsFromSize(selectedSize);
@@ -59,8 +63,19 @@ export default function ProductDetail({ product }: { product: Product }) {
         return product.reviews.length ? (
           <ul className={styles.reviewList}>
             {product.reviews.map((r, i) => (
-              <li key={i}>
-                <strong>{r.author}</strong> — {r.text}
+              <li key={i} className={styles.reviewCard}>
+                <div className={styles.reviewHeader}>
+                  <span className={styles.reviewAvatar} aria-hidden>{r.author.charAt(0).toUpperCase()}</span>
+                  <div className={styles.reviewMeta}>
+                    <span className={styles.reviewAuthor}>{r.author}</span>
+                    {typeof r.rating === 'number' && (
+                      <span className={styles.reviewStars} aria-label={`${r.rating} out of 5 stars`}>
+                        {'★'.repeat(r.rating)}{'☆'.repeat(5 - r.rating)}
+                      </span>
+                    )}
+                  </div>
+                </div>
+                <p className={styles.reviewText}>{r.text}</p>
               </li>
             ))}
           </ul>
@@ -82,14 +97,61 @@ export default function ProductDetail({ product }: { product: Product }) {
         <div className={styles.panels}>
           <div className={styles.leftPanel}>
             <div className={styles.imageWrap}>
-              <Image
-                src={getProductImageUrl(product)}
-                alt={product.title}
-                fill
-                className={styles.mainImage}
-                sizes="(max-width: 768px) 100vw, 50vw"
-                priority
-              />
+              {hasSlider ? (
+                <>
+                  <div className={styles.sliderTrack} style={{ transform: `translateX(-${slideIndex * 100}%)` }}>
+                    {imageUrls.map((src, i) => (
+                      <div key={i} className={styles.sliderSlide}>
+                        <Image
+                          src={src}
+                          alt={`${product.title} ${i + 1}`}
+                          fill
+                          className={styles.mainImage}
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                          priority={i === 0}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                  <button
+                    type="button"
+                    className={styles.sliderPrev}
+                    onClick={() => setSlideIndex((i) => (i === 0 ? imageUrls.length - 1 : i - 1))}
+                    aria-label="Previous image"
+                  >
+                    ‹
+                  </button>
+                  <button
+                    type="button"
+                    className={styles.sliderNext}
+                    onClick={() => setSlideIndex((i) => (i === imageUrls.length - 1 ? 0 : i + 1))}
+                    aria-label="Next image"
+                  >
+                    ›
+                  </button>
+                  <div className={styles.sliderDots}>
+                    {imageUrls.map((_, i) => (
+                      <button
+                        key={i}
+                        type="button"
+                        className={`${styles.sliderDot} ${i === slideIndex ? styles.sliderDotActive : ''}`}
+                        onClick={() => setSlideIndex(i)}
+                        aria-label={`Go to image ${i + 1}`}
+                        aria-current={i === slideIndex}
+                      />
+                    ))}
+                  </div>
+                </>
+              ) : (
+                <Image
+                  src={getProductImageUrl(product)}
+                  alt={product.title}
+                  fill
+                  className={styles.mainImage}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  priority
+                />
+              )}
             </div>
           </div>
           <div className={styles.rightPanel}>
@@ -184,7 +246,9 @@ export default function ProductDetail({ product }: { product: Product }) {
                 className={`${styles.tab} ${activeTab === id ? styles.tabActive : ''}`}
                 onClick={() => setActiveTab(id)}
               >
-                {label}
+                {id === 'reviews' && product.reviews.length > 0
+                  ? `${label} (${product.reviews.length})`
+                  : label}
               </button>
             ))}
           </div>

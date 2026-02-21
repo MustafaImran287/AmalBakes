@@ -1,5 +1,5 @@
 {
-  "_comment": "Update this file to change products. Image filename must match the file in public/cake products or public/cookies products (cakes use cake products; cookies and brownie use cookies products).",
+  "_comment": "Image paths: cakes = public/cake products; cookies = public/cookies products/dummy images; brownie = public/brownie products. Listing shows product.image; detail shows slider when product.images has multiple.",
   "products": [
     {
       "id": "1",
@@ -55,7 +55,9 @@
       "tabDescription": "Three Milk is made with care and quality ingredients. Our cakes and treats are baked fresh to order. The food colourings we use are food-grade and safe. Please note they may cause temporary stains on skin and surfaces; these are harmless and should come off with regular washing. These rates are for standard cakes. Prices may vary according to customization.",
       "tabIngredients": "Vanilla sponge, three-milk soak, fresh cream. Wheat flour, sugar, butter, eggs, fresh cream, vanilla. May contain traces of nuts and dairy.",
       "tabNutritional": "Per 100g (approx): Energy 350kcal, Fat 18g, Saturates 11g, Carbohydrate 42g, Sugars 28g, Protein 5g, Salt 0.3g.",
-      "reviews": []
+      "reviews": [
+        { "author": "Rida", "text": "This was hands down one of the best cakes i have had in quite some time now @amal.bakes.2025 Tooo goood", "rating": 5 }
+      ]
     },
     {
       "id": "5",
@@ -114,13 +116,47 @@
       "reviews": []
     },
     {
+      "id": "14",
+      "title": "Vanilla Oreo (Fresh Cream Frosting)",
+      "description": "Vanilla sponge with Oreo and fresh cream frosting.",
+      "category": "vanilla-cakes",
+      "price": 1400,
+      "image": "Vanilla oreo in fresh cream frosting.jpeg",
+      "images": ["Vanilla oreo in fresh cream frosting.jpeg"],
+      "sizeServing": ["1 pound", "2 pound"],
+      "tabDescription": "Vanilla Oreo with fresh cream frosting is made with care and quality ingredients. Our cakes and treats are baked fresh to order. The food colourings we use are food-grade and safe. Please note they may cause temporary stains on skin and surfaces; these are harmless and should come off with regular washing. These rates are for standard cakes. Prices may vary according to customization.",
+      "tabIngredients": "Oreo, vanilla sponge, fresh cream. Wheat flour, sugar, butter, eggs, fresh cream, vanilla. May contain traces of nuts and dairy.",
+      "tabNutritional": "Per 100g (approx): Energy 350kcal, Fat 18g, Saturates 11g, Carbohydrate 42g, Sugars 28g, Protein 5g, Salt 0.3g.",
+      "reviews": [
+        { "author": "Zoha", "text": "Thank you so much for this beautiful cake for Zoha! It's absolutely adorable and made her day extra special. Truly loved your creativity and effort. 🎂✨", "rating": 5 },
+        { "author": "Customer", "text": "The cake was soft and perfectly baked. The sweetness was just right everyone loved it soooooo much", "rating": 5 }
+      ]
+    },
+    {
+      "id": "15",
+      "title": "Chocolate Fudge (Buttercream Frosting)",
+      "description": "Rich chocolate fudge with buttercream frosting. Dense and indulgent.",
+      "category": "chocolate-cakes",
+      "price": 1500,
+      "image": "chocolate fudge in buttercream frosting.jpeg",
+      "images": ["chocolate fudge in buttercream frosting.jpeg"],
+      "sizeServing": ["1 pound", "2 pound"],
+      "tabDescription": "Chocolate Fudge with buttercream frosting is made with care and quality ingredients. Our cakes and treats are baked fresh to order. The food colourings we use are food-grade and safe. Please note they may cause temporary stains on skin and surfaces; these are harmless and should come off with regular washing. These rates are for standard cakes. Prices may vary according to customization.",
+      "tabIngredients": "Chocolate fudge, buttercream, chocolate sponge. Wheat flour, sugar, butter, eggs, fresh cream, vanilla. May contain traces of nuts and dairy.",
+      "tabNutritional": "Per 100g (approx): Energy 350kcal, Fat 18g, Saturates 11g, Carbohydrate 42g, Sugars 28g, Protein 5g, Salt 0.3g.",
+      "reviews": [
+        { "author": "Customer", "text": "Thankyou so much. The cake is perfect ❤️ Love itttt 💕", "rating": 5 },
+        { "author": "Amna", "text": "It was the yummiest cake 🤤 will definitely be ordering from you again 💕", "rating": 5 }
+      ]
+    },
+    {
       "id": "9",
       "title": "Classic Cookie",
       "description": "Classic cookie, buttery and crisp. Per piece.",
       "category": "cookies",
       "price": 200,
-      "image": "top-view-mix-cookies-with-chocolate-gingerbread-cookies-table.jpg",
-      "images": ["top-view-mix-cookies-with-chocolate-gingerbread-cookies-table.jpg"],
+      "image": "cookies products/dummy images/top-view-mix-cookies-with-chocolate-gingerbread-cookies-table.jpg",
+      "images": ["cookies products/dummy images/top-view-mix-cookies-with-chocolate-gingerbread-cookies-table.jpg"],
       "sizeServing": ["Per piece"],
       "tabDescription": "Classic Cookie is made with care and quality ingredients. Our cakes and treats are baked fresh to order. The food colourings we use are food-grade and safe. Please note they may cause temporary stains on skin and surfaces; these are harmless and should come off with regular washing.",
       "tabIngredients": "Wheat flour, sugar, butter, eggs, fresh cream, vanilla. May contain traces of nuts and dairy.",
@@ -133,8 +169,8 @@
       "description": "Chocolate cookie with chocolate chips. Per piece.",
       "category": "cookies",
       "price": 220,
-      "image": "view-baked-cookies-done-by-vegan-bakery.jpg",
-      "images": ["view-baked-cookies-done-by-vegan-bakery.jpg"],
+      "image": "cookies products/dummy images/view-baked-cookies-done-by-vegan-bakery.jpg",
+      "images": ["cookies products/dummy images/view-baked-cookies-done-by-vegan-bakery.jpg"],
       "sizeServing": ["Per piece"],
       "tabDescription": "Double Chocolate Cookie is made with care and quality ingredients. Our cakes and treats are baked fresh to order. The food colourings we use are food-grade and safe. Please note they may cause temporary stains on skin and surfaces; these are harmless and should come off with regular washing.",
       "tabIngredients": "Chocolate, cocoa, chocolate chips. Wheat flour, sugar, butter, eggs, fresh cream, vanilla. May contain traces of nuts and dairy.",
@@ -147,11 +183,25 @@
       "description": "Red velvet cookie with cream cheese flavour. Per piece.",
       "category": "cookies",
       "price": 220,
-      "image": "plate-sweeties-jar-biscuits.jpg",
-      "images": ["plate-sweeties-jar-biscuits.jpg"],
+      "image": "cookies products/dummy images/plate-sweeties-jar-biscuits.jpg",
+      "images": ["cookies products/dummy images/plate-sweeties-jar-biscuits.jpg"],
       "sizeServing": ["Per piece"],
       "tabDescription": "Red Velvet Cookie is made with care and quality ingredients. Our cakes and treats are baked fresh to order. The food colourings we use are food-grade and safe. Please note they may cause temporary stains on skin and surfaces; these are harmless and should come off with regular washing.",
       "tabIngredients": "Red velvet, cream cheese flavour. Wheat flour, sugar, butter, eggs, fresh cream, vanilla. May contain traces of nuts and dairy.",
+      "tabNutritional": "Per 100g (approx): Energy 350kcal, Fat 18g, Saturates 11g, Carbohydrate 42g, Sugars 28g, Protein 5g, Salt 0.3g.",
+      "reviews": []
+    },
+    {
+      "id": "13",
+      "title": "Chocolate Cookie",
+      "description": "Chocolate cookie, rich and crisp. Per piece.",
+      "category": "cookies",
+      "price": 220,
+      "image": "cookies products/chocolate cookies.jpeg",
+      "images": ["cookies products/chocolate cookies.jpeg"],
+      "sizeServing": ["Per piece"],
+      "tabDescription": "Chocolate Cookie is made with care and quality ingredients. Our cakes and treats are baked fresh to order. The food colourings we use are food-grade and safe. Please note they may cause temporary stains on skin and surfaces; these are harmless and should come off with regular washing.",
+      "tabIngredients": "Chocolate, cocoa. Wheat flour, sugar, butter, eggs. May contain traces of nuts and dairy.",
       "tabNutritional": "Per 100g (approx): Energy 350kcal, Fat 18g, Saturates 11g, Carbohydrate 42g, Sugars 28g, Protein 5g, Salt 0.3g.",
       "reviews": []
     },
@@ -161,13 +211,15 @@
       "description": "Chocolate fudge brownie. Rich and chewy. Per piece.",
       "category": "brownie",
       "price": 250,
-      "image": "top-view-sweet-biscuits-with-nuts-presents-light-table.jpg",
-      "images": ["top-view-sweet-biscuits-with-nuts-presents-light-table.jpg"],
+      "image": "chocolate brownie-1.jpeg",
+      "images": ["chocolate brownie-1.jpeg", "chocolate brownie-2.jpeg", "chocolate brownie-3.jpeg"],
       "sizeServing": ["Per piece"],
       "tabDescription": "Chocolate Fudge Brownie is made with care and quality ingredients. Our cakes and treats are baked fresh to order. The food colourings we use are food-grade and safe. Please note they may cause temporary stains on skin and surfaces; these are harmless and should come off with regular washing.",
       "tabIngredients": "Chocolate, cocoa, butter. Wheat flour, sugar, butter, eggs, fresh cream, vanilla. May contain traces of nuts and dairy.",
       "tabNutritional": "Per 100g (approx): Energy 350kcal, Fat 18g, Saturates 11g, Carbohydrate 42g, Sugars 28g, Protein 5g, Salt 0.3g.",
-      "reviews": []
+      "reviews": [
+        { "author": "Customer", "text": "Bought brownies from you yesterday, they tasted sooo good 🥰💕", "rating": 5 }
+      ]
     }
   ]
 }

@@ -1,9 +1,31 @@
+'use client';
+
+import { useState, useEffect, useMemo } from 'react';
+import { ALL_PRODUCTS } from '@/lib/products';
 import styles from './Testimonials.module.css';
 
-const TESTIMONIALS = [
-  { quote: 'The cake was exactly what I wanted—fresh, beautiful, and so delicious. Will order again!', name: '— A satisfied customer', stars: 5 },
-  { quote: 'Ordered for my daughter\'s birthday. On time, gorgeous, and everyone asked where we got it from.', name: '— Happy parent', stars: 5 },
-];
+type TestimonialItem = {
+  quote: string;
+  name: string;
+  productTitle: string;
+  stars: number;
+};
+
+function getTestimonials(): TestimonialItem[] {
+  const list: TestimonialItem[] = [];
+  for (const product of ALL_PRODUCTS) {
+    if (!product.reviews?.length) continue;
+    for (const r of product.reviews) {
+      list.push({
+        quote: r.text,
+        name: r.author,
+        productTitle: product.title,
+        stars: typeof r.rating === 'number' ? r.rating : 5,
+      });
+    }
+  }
+  return list;
+}
 
 function StarRating({ count }: { count: number }) {
   return (
@@ -17,21 +39,70 @@ function StarRating({ count }: { count: number }) {
   );
 }
 
+const AUTO_ADVANCE_MS = 5000;
+const PER_PAGE = 3;
+
 export default function Testimonials() {
+  const testimonials = useMemo(() => getTestimonials(), []);
+  const pageCount = Math.max(1, Math.ceil(testimonials.length / PER_PAGE));
+  const [page, setPage] = useState(0);
+
+  useEffect(() => {
+    if (pageCount <= 1) return;
+    const id = setInterval(() => {
+      setPage((prev) => (prev + 1) % pageCount);
+    }, AUTO_ADVANCE_MS);
+    return () => clearInterval(id);
+  }, [pageCount]);
+
+  if (testimonials.length === 0) {
+    return (
+      <section id="testimonials" className={styles.section}>
+        <div className={styles.inner}>
+          <p className={styles.kicker}>What people say</p>
+          <h2 className={styles.title}>Testimonials</h2>
+          <p className={styles.empty}>Reviews from our customers will appear here.</p>
+        </div>
+      </section>
+    );
+  }
+
+  const start = page * PER_PAGE;
+  const visible = testimonials.slice(start, start + PER_PAGE);
+
   return (
     <section id="testimonials" className={styles.section}>
       <div className={styles.inner}>
         <p className={styles.kicker}>What people say</p>
         <h2 className={styles.title}>Testimonials</h2>
-        <ul className={styles.list}>
-          {TESTIMONIALS.map((t, i) => (
-            <li key={i} className={styles.item}>
-              <StarRating count={t.stars} />
-              <blockquote className={styles.quote}>{t.quote}</blockquote>
-              <cite className={styles.name}>{t.name}</cite>
-            </li>
-          ))}
-        </ul>
+
+        <div className={styles.sliderWrap}>
+          <ul className={styles.row} key={page}>
+            {visible.map((t, i) => (
+              <li key={`${page}-${i}`} className={styles.item}>
+                <StarRating count={t.stars} />
+                <blockquote className={styles.quote}>{t.quote}</blockquote>
+                <cite className={styles.name}>— {t.name}</cite>
+                <span className={styles.product}>{t.productTitle}</span>
+              </li>
+            ))}
+          </ul>
+
+          {pageCount > 1 && (
+            <div className={styles.dots}>
+              {Array.from({ length: pageCount }, (_, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  className={`${styles.dot} ${i === page ? styles.dotActive : ''}`}
+                  onClick={() => setPage(i)}
+                  aria-label={`Go to page ${i + 1}`}
+                  aria-current={i === page}
+                />
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     </section>
   );

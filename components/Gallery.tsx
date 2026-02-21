@@ -13,10 +13,14 @@ const GALLERY_IMAGES = [
   { src: '/cake%20products/Chocolate%20fudge.jpeg', alt: 'Chocolate Fudge' },
   { src: '/cake%20products/Chocolate%20caramel.jpeg', alt: 'Chocolate Caramel' },
   { src: '/cake%20products/Chocolate%20oreo.jpeg', alt: 'Chocolate Oreo' },
-  { src: '/cookies%20products/top-view-mix-cookies-with-chocolate-gingerbread-cookies-table.jpg', alt: 'Cookies' },
-  { src: '/cookies%20products/view-baked-cookies-done-by-vegan-bakery.jpg', alt: 'Cookies' },
-  { src: '/cookies%20products/plate-sweeties-jar-biscuits.jpg', alt: 'Biscuits' },
-  { src: '/cookies%20products/top-view-sweet-biscuits-with-nuts-presents-light-table.jpg', alt: 'Sweet treats' },
+  { src: '/brownie%20products/chocolate%20brownie-1.jpeg', alt: 'Chocolate Brownie' },
+  { src: '/brownie%20products/chocolate%20brownie-2.jpeg', alt: 'Brownie' },
+  { src: '/brownie%20products/chocolate%20brownie-3.jpeg', alt: 'Brownie' },
+  { src: '/cookies%20products/chocolate%20cookies.jpeg', alt: 'Chocolate Cookie' },
+  { src: '/cookies%20products/dummy%20images/top-view-mix-cookies-with-chocolate-gingerbread-cookies-table.jpg', alt: 'Cookies' },
+  { src: '/cookies%20products/dummy%20images/view-baked-cookies-done-by-vegan-bakery.jpg', alt: 'Cookies' },
+  { src: '/cookies%20products/dummy%20images/plate-sweeties-jar-biscuits.jpg', alt: 'Biscuits' },
+  { src: '/cookies%20products/dummy%20images/top-view-sweet-biscuits-with-nuts-presents-light-table.jpg', alt: 'Sweet treats' },
   { src: '/hero-cake.png', alt: 'Amal Bakes' },
 ];
 
