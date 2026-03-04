@@ -1,0 +1,286 @@
+.section {
+  width: 100%;
+  max-width: 100vw;
+  padding: 2.5rem 1rem 3rem;
+  overflow-x: hidden;
+  min-width: 0;
+  position: relative;
+  /* Theme background so transparent decor 1 shows over cream–pink gradient */
+  background: linear-gradient(
+    135deg,
+    rgba(255, 247, 173, 0.85) 0%,
+    rgba(255, 235, 245, 0.9) 50%,
+    rgba(255, 169, 249, 0.25) 100%
+  );
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 3.5rem 1.5rem 4rem;
+  }
+}
+
+/* Lanterns anchored to top of section, dropping down on the right */
+.decorOverlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url('/ramdan-decor-1.png');
+  background-repeat: no-repeat;
+  background-position: 100% 0;
+  background-size: 55% auto;
+}
+
+.inner {
+  position: relative;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0;
+  margin-right: auto;
+  padding: 0 0.5rem;
+  min-width: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .inner {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75rem;
+  }
+}
+
+.decorLeft {
+  flex-shrink: 0;
+  line-height: 0;
+}
+
+.decorImage {
+  width: auto;
+  height: auto;
+  max-width: 100px;
+  max-height: 130px;
+  object-fit: contain;
+}
+
+@media (min-width: 768px) {
+  .decorImage {
+    max-width: 120px;
+    max-height: 160px;
+  }
+}
+
+.cardBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.sectionLabel {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1rem, 2.2vw, 1.15rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #b8860b;
+  margin: 0;
+  padding: 0.2rem 0 0;
+}
+
+.sectionLabel::after {
+  content: '';
+  display: block;
+  width: 3rem;
+  height: 3px;
+  margin-top: 0.3rem;
+  background: linear-gradient(90deg, #d4a017, rgba(212, 160, 23, 0.5));
+  border-radius: 2px;
+}
+
+.inner > .cardBlock {
+  max-width: 500px;
+}
+
+.inner > .cardBlock > .card {
+  max-width: 100%;
+}
+
+@media (min-width: 640px) {
+  .inner {
+    padding: 0 1rem;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: #fffbf8;
+  border-radius: 14px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(255, 169, 249, 0.08);
+  overflow: hidden;
+  min-width: 0;
+}
+
+@media (min-width: 768px) {
+  .card {
+    min-height: 240px;
+  }
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+@media (min-width: 768px) {
+  .cardBody {
+    flex-direction: row;
+    align-items: stretch;
+  }
+}
+
+.content {
+  flex: 1;
+  padding: 1.25rem 1.35rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+@media (min-width: 768px) {
+  .content {
+    padding: 1.35rem 1.5rem;
+    min-width: 0;
+  }
+}
+
+.badge {
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #6b5a2e;
+  background: rgba(254, 243, 199, 0.7);
+  padding: 0.3rem 0.65rem;
+  border-radius: 4px;
+  border: 1px solid rgba(180, 140, 30, 0.2);
+  margin-bottom: 0.5rem;
+  align-self: flex-start;
+}
+
+.productName {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1.25rem, 2.2vw, 1.5rem);
+  font-weight: 600;
+  color: var(--text-dark);
+  line-height: 1.3;
+  margin: 0 0 0.5rem 0;
+}
+
+.priceRow {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.2rem;
+  flex-wrap: wrap;
+}
+
+.originalPrice {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-decoration: line-through;
+}
+
+.discountBadge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--white);
+  background: var(--text-dark);
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+}
+
+.discountedPrice {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #c75a9e;
+  margin: 0 0 0.6rem 0;
+}
+
+.only {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.description {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0 0 0.9rem 0;
+}
+
+.cta {
+  display: inline-block;
+  width: fit-content;
+  padding: 0.55rem 1.25rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(135deg, #d873a8 0%, #c75a9e 100%);
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 2px 12px rgba(199, 90, 158, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 18px rgba(199, 90, 158, 0.35);
+  color: #fff;
+}
+
+.imageWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  min-height: 0;
+  background: #fdf8f5;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .imageWrap {
+    width: 42%;
+    min-width: 200px;
+    flex: 0 0 auto;
+    align-self: stretch;
+    aspect-ratio: auto;
+    min-height: 200px;
+    max-height: none;
+  }
+}
+
+.image {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  object-position: center center;
+}

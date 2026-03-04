@@ -15,6 +15,7 @@
   margin: 0 auto;
   padding: 1.5rem 1rem 3rem;
   min-width: 0;
+  overflow-x: hidden;
 }
 
 @media (min-width: 768px) {
@@ -65,6 +66,8 @@
     0 2px 12px rgba(255, 169, 249, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.9);
   transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  min-width: 0;
+  overflow-x: hidden;
 }
 
 .form:focus-within {
@@ -100,8 +103,10 @@
 
 .formGrid {
   display: grid;
+  grid-template-columns: 1fr;
   gap: 1.25rem;
   margin-bottom: 1.25rem;
+  min-width: 0;
 }
 
 @media (min-width: 640px) {
@@ -113,6 +118,7 @@
 
 .formGrid .field {
   margin-bottom: 0;
+  min-width: 0;
 }
 
 .field {
@@ -120,6 +126,7 @@
   flex-direction: column;
   gap: 0.45rem;
   margin-bottom: 1.25rem;
+  min-width: 0;
 }
 
 .label {
@@ -133,6 +140,8 @@
 .select,
 .textarea {
   width: 100%;
+  min-width: 0;
+  max-width: 100%;
   padding: 0.7rem 1rem;
   font-size: 1rem;
   font-family: inherit;
@@ -142,6 +151,20 @@
   border-radius: var(--radius);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
   box-sizing: border-box;
+}
+
+/* Date/time inputs often have large default min-width on mobile – force them to respect container */
+.input[type="date"],
+.input[type="time"] {
+  min-width: 0;
+  width: 100%;
+}
+
+@media (max-width: 480px) {
+  .input[type="date"],
+  .input[type="time"] {
+    font-size: 0.9375rem;
+  }
 }
 
 .textarea {

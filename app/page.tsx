@@ -1,4 +1,5 @@
 import Header from '@/components/Header';
+import LimitedOffers from '@/components/LimitedOffers';
 import Products from '@/components/Products';
 import OurPromise from '@/components/OurPromise';
 import About from '@/components/About';
@@ -12,6 +13,7 @@ export default function Home() {
       <Header />
       <main>
         <Products />
+        <LimitedOffers />
         <OurPromise />
         <About />
         <Testimonials />
