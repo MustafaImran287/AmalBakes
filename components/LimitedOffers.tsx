@@ -6,15 +6,16 @@ import styles from './LimitedOffers.module.css';
 
 const WHATSAPP_NUMBER = '923365119740';
 
-const RAMADAN_OFFER = {
-  badge: 'Ramadan offer',
-  title: 'Three Milk Caramel Cake',
+const LIMITED_OFFER = {
+  badge: 'Special offer',
+  title: 'Dusty rose vintage floral buttercream',
   originalPrice: 1700,
   discountedPrice: 1530,
   discountPercent: 10,
-  description: 'Three-milk sponge with caramel glaze. Perfect for iftar or gifting.',
-  imagePath: '/cake%20products/Ramzan%20Cake.jpeg',
-  imageAlt: 'Ramzan cake - Amal Bakes Ramadan offer',
+  description:
+    'Pearl and vintage-style florals in dusty rose tones — an elegant buttercream finish. Perfect for gifting or your next celebration.',
+  imagePath: '/cake%20products/dusty-rose-pearl-vintage-floral-buttercream-cake.jpeg',
+  imageAlt: 'Dusty rose vintage floral buttercream cake — Amal Bakes limited offer',
 };
 
 function formatPrice(n: number) {
@@ -22,7 +23,7 @@ function formatPrice(n: number) {
 }
 
 export default function LimitedOffers() {
-  const whatsappMessage = `Hi, I'd like to order the Ramadan offer: Three milk caramel cake at ${formatPrice(RAMADAN_OFFER.discountedPrice)}.`;
+  const whatsappMessage = `Hi, I'd like to order the limited offer: ${LIMITED_OFFER.title} at ${formatPrice(LIMITED_OFFER.discountedPrice)}.`;
   const orderUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
@@ -39,28 +40,28 @@ export default function LimitedOffers() {
           />
         </div>
         <div className={styles.cardBlock}>
-          <p className={styles.sectionLabel}>Limited offer for Ramzan</p>
+          <p className={styles.sectionLabel}>Limited offer</p>
           <div className={styles.card}>
           <div className={styles.cardBody}>
             <div className={styles.content}>
-              <span className={styles.badge}>{RAMADAN_OFFER.badge}</span>
-              <h3 className={styles.productName}>{RAMADAN_OFFER.title}</h3>
+              <span className={styles.badge}>{LIMITED_OFFER.badge}</span>
+              <h3 className={styles.productName}>{LIMITED_OFFER.title}</h3>
               <div className={styles.priceRow}>
-                <span className={styles.originalPrice}>{formatPrice(RAMADAN_OFFER.originalPrice)}</span>
-                <span className={styles.discountBadge}>{RAMADAN_OFFER.discountPercent}% off</span>
+                <span className={styles.originalPrice}>{formatPrice(LIMITED_OFFER.originalPrice)}</span>
+                <span className={styles.discountBadge}>{LIMITED_OFFER.discountPercent}% off</span>
               </div>
               <p className={styles.discountedPrice}>
-                {formatPrice(RAMADAN_OFFER.discountedPrice)} <span className={styles.only}>only</span>
+                {formatPrice(LIMITED_OFFER.discountedPrice)} <span className={styles.only}>only</span>
               </p>
-              <p className={styles.description}>{RAMADAN_OFFER.description}</p>
+              <p className={styles.description}>{LIMITED_OFFER.description}</p>
               <a href={orderUrl} target="_blank" rel="noopener noreferrer" className={styles.cta}>
                 Order now
               </a>
             </div>
             <div className={styles.imageWrap}>
               <Image
-                src={assetUrl(RAMADAN_OFFER.imagePath)}
-                alt={RAMADAN_OFFER.imageAlt}
+                src={assetUrl(LIMITED_OFFER.imagePath)}
+                alt={LIMITED_OFFER.imageAlt}
                 fill
                 className={styles.image}
                 sizes="(max-width: 768px) 100vw, 280px"
