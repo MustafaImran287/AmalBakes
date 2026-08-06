@@ -13,6 +13,54 @@ type GalleryImage = {
 
 const GALLERY_IMAGES: GalleryImage[] = [
   {
+    src: '/cake%20products/Lotus%20flavour.jpeg',
+    alt: 'Lotus Biscoff cake with caramel drip',
+    title: 'Lotus flavour cake',
+    description: 'Biscoff crumb, caramel drip and a fresh cream swirl — with your message piped on.',
+  },
+  {
+    src: '/cake%20products/Pineapple%20cake%20umrah%20theme.jpeg',
+    alt: 'Umrah Mubarak cake with gold leaf',
+    title: 'Umrah Mubarak cake',
+    description: 'Vanilla pineapple finished in white with edible gold leaf and pearls.',
+  },
+  {
+    src: '/cake%20products/Three%20milk%2B%20chocolate%20fudge.jpeg',
+    alt: 'Mint green three milk and chocolate fudge cake',
+    title: 'Three milk & chocolate fudge',
+    description: 'Mint-toned finish with piped roses and gold pearls — soft and moist inside.',
+  },
+  {
+    src: '/cake%20products/Chocolate%20fudge%20Vintage%20theme%20cherry%20cake.jpeg',
+    alt: 'Vintage cherry topped chocolate fudge cake',
+    title: 'Cherry vintage cake',
+    description: 'Vintage piping crowned with fresh cherries — a proper showstopper.',
+  },
+  {
+    src: '/cake%20products/Chocolate%20fudge%20vintage%20cake.jpeg',
+    alt: 'Vintage cake with purple ribbon bows',
+    title: 'Vintage ribbon cake',
+    description: 'Classic piping with pearls and satin ribbon bows for an elegant finish.',
+  },
+  {
+    src: '/cake%20products/Chocolate%20fudge%20buttercream%20customized%20cake.jpeg',
+    alt: 'Pink buttercream cake with edible butterflies',
+    title: 'Butterfly custom cake',
+    description: 'Soft pink buttercream with edible butterflies and a character topper.',
+  },
+  {
+    src: '/cake%20products/Chocolate%20fudge%20buttercream%20dora%20theme%20customized%20cake.jpeg',
+    alt: 'Colourful doll theme birthday cake',
+    title: 'Doll theme birthday cake',
+    description: 'Colourful ombré buttercream with doll toppers and star picks — a kids’ favourite.',
+  },
+  {
+    src: '/cake%20products/Chocolate%20fudge%20buttercream%20ronaldo%20theme%20customized%20cake.jpeg',
+    alt: 'Football theme cake with jersey topper',
+    title: 'Football theme cake',
+    description: 'Personalised jersey topper and chocolate football for match-day birthdays.',
+  },
+  {
     src: '/cake%20products/Basoc%20Vanilla.jpeg',
     alt: 'Basic Vanilla cake',
     title: 'Basic Vanilla',

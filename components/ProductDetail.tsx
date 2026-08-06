@@ -4,7 +4,12 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import type { Product } from '@/lib/products';
-import { formatPrice, getProductImageUrl, getProductImageUrls } from '@/lib/products';
+import {
+  BUTTERCREAM_SURCHARGE_PER_POUND,
+  formatPrice,
+  getProductImageUrl,
+  getProductImageUrls,
+} from '@/lib/products';
 import { useCart } from '@/context/CartContext';
 import styles from './ProductDetail.module.css';
 
@@ -38,7 +43,9 @@ export default function ProductDetail({ product }: { product: Product }) {
 
   const isCakeByPound = product.category === 'vanilla-cakes' || product.category === 'chocolate-cakes';
   const pounds = getPoundsFromSize(selectedSize);
-  const unitPrice = isCakeByPound ? product.price * pounds : product.price;
+  const pricePerPound =
+    product.price + (isCakeByPound && frosting === 'butter-cream' ? BUTTERCREAM_SURCHARGE_PER_POUND : 0);
+  const unitPrice = isCakeByPound ? pricePerPound * pounds : product.price;
   const totalPrice = unitPrice * quantity;
 
   const handleAddToBasket = () => {
@@ -186,7 +193,9 @@ export default function ProductDetail({ product }: { product: Product }) {
                   onChange={(e) => setFrosting(e.target.value as 'fresh-cream' | 'butter-cream')}
                 >
                   <option value="fresh-cream">Fresh cream</option>
-                  <option value="butter-cream">Butter cream</option>
+                  <option value="butter-cream">
+                    Butter cream (+{formatPrice(BUTTERCREAM_SURCHARGE_PER_POUND)} per pound)
+                  </option>
                 </select>
               </div>
             )}

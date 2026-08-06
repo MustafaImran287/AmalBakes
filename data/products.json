@@ -13,7 +13,9 @@
       "tabDescription": "Basic Vanilla is made with care and quality ingredients. Our cakes and treats are baked fresh to order. The food colourings we use are food-grade and safe. Please note they may cause temporary stains on skin and surfaces; these are harmless and should come off with regular washing. These rates are for standard cakes. Prices may vary according to customization.",
       "tabIngredients": "Wheat flour, sugar, butter, eggs, fresh cream, vanilla. May contain traces of nuts and dairy.",
       "tabNutritional": "Per 100g (approx): Energy 350kcal, Fat 18g, Saturates 11g, Carbohydrate 42g, Sugars 28g, Protein 5g, Salt 0.3g.",
-      "reviews": []
+      "reviews": [
+        { "author": "Ayesha", "text": "Ordered a simple vanilla for my mother's birthday and it disappeared in minutes. So soft and not overly sweet exactly what we wanted.", "rating": 5 }
+      ]
     },
     {
       "id": "2",
@@ -27,7 +29,9 @@
       "tabDescription": "Vanilla Pineapple is made with care and quality ingredients. Our cakes and treats are baked fresh to order. The food colourings we use are food-grade and safe. Please note they may cause temporary stains on skin and surfaces; these are harmless and should come off with regular washing. These rates are for standard cakes. Prices may vary according to customization.",
       "tabIngredients": "Pineapple, vanilla sponge, fresh cream. Wheat flour, sugar, butter, eggs, fresh cream, vanilla. May contain traces of nuts and dairy.",
       "tabNutritional": "Per 100g (approx): Energy 350kcal, Fat 18g, Saturates 11g, Carbohydrate 42g, Sugars 28g, Protein 5g, Salt 0.3g.",
-      "reviews": []
+      "reviews": [
+        { "author": "Hina", "text": "The pineapple bits made it so refreshing and light. My whole family kept asking where I got it from. Will definitely order again for Eid!", "rating": 5 }
+      ]
     },
     {
       "id": "3",
@@ -41,7 +45,9 @@
       "tabDescription": "Vanilla Oreo is made with care and quality ingredients. Our cakes and treats are baked fresh to order. The food colourings we use are food-grade and safe. Please note they may cause temporary stains on skin and surfaces; these are harmless and should come off with regular washing. These rates are for standard cakes. Prices may vary according to customization.",
       "tabIngredients": "Oreo, vanilla sponge, fresh cream. Wheat flour, sugar, butter, eggs, fresh cream, vanilla. May contain traces of nuts and dairy.",
       "tabNutritional": "Per 100g (approx): Energy 350kcal, Fat 18g, Saturates 11g, Carbohydrate 42g, Sugars 28g, Protein 5g, Salt 0.3g.",
-      "reviews": []
+      "reviews": [
+        { "author": "Sana", "text": "My kids are completely obsessed with this one. Loaded with Oreo in every single bite and the cream was perfectly light.", "rating": 5 }
+      ]
     },
     {
       "id": "4",
@@ -71,21 +77,25 @@
       "tabDescription": "Lotus is made with care and quality ingredients. Our cakes and treats are baked fresh to order. The food colourings we use are food-grade and safe. Please note they may cause temporary stains on skin and surfaces; these are harmless and should come off with regular washing. These rates are for standard cakes. Prices may vary according to customization.",
       "tabIngredients": "Lotus spread, caramel, vanilla sponge. Wheat flour, sugar, butter, eggs, fresh cream, vanilla. May contain traces of nuts and dairy.",
       "tabNutritional": "Per 100g (approx): Energy 350kcal, Fat 18g, Saturates 11g, Carbohydrate 42g, Sugars 28g, Protein 5g, Salt 0.3g.",
-      "reviews": []
+      "reviews": [
+        { "author": "Bilal", "text": "Best Lotus cake I have had in Islamabad, hands down. The caramel and biscuit layers were absolutely spot on.", "rating": 5 }
+      ]
     },
     {
       "id": "6",
       "title": "Chocolate Fudge",
       "description": "Rich chocolate fudge and ganache. Dense and indulgent.",
       "category": "chocolate-cakes",
-      "price": 1500,
+      "price": 1600,
       "image": "Chocolate fudge.jpeg",
       "images": ["Chocolate fudge.jpeg"],
       "sizeServing": ["1 pound", "2 pound"],
       "tabDescription": "Chocolate Fudge is made with care and quality ingredients. Our cakes and treats are baked fresh to order. The food colourings we use are food-grade and safe. Please note they may cause temporary stains on skin and surfaces; these are harmless and should come off with regular washing. These rates are for standard cakes. Prices may vary according to customization.",
       "tabIngredients": "Chocolate fudge, ganache, chocolate sponge. Wheat flour, sugar, butter, eggs, fresh cream, vanilla. May contain traces of nuts and dairy.",
       "tabNutritional": "Per 100g (approx): Energy 350kcal, Fat 18g, Saturates 11g, Carbohydrate 42g, Sugars 28g, Protein 5g, Salt 0.3g.",
-      "reviews": []
+      "reviews": [
+        { "author": "Usman", "text": "Proper rich chocolate, not the dry kind you get from most bakeries. Ordered 2 pound and everyone came back for seconds.", "rating": 5 }
+      ]
     },
     {
       "id": "7",
@@ -99,21 +109,25 @@
       "tabDescription": "Chocolate Caramel is made with care and quality ingredients. Our cakes and treats are baked fresh to order. The food colourings we use are food-grade and safe. Please note they may cause temporary stains on skin and surfaces; these are harmless and should come off with regular washing. These rates are for standard cakes. Prices may vary according to customization.",
       "tabIngredients": "Chocolate sponge, caramel, fresh cream. Wheat flour, sugar, butter, eggs, fresh cream, vanilla. May contain traces of nuts and dairy.",
       "tabNutritional": "Per 100g (approx): Energy 350kcal, Fat 18g, Saturates 11g, Carbohydrate 42g, Sugars 28g, Protein 5g, Salt 0.3g.",
-      "reviews": []
+      "reviews": [
+        { "author": "Maryam", "text": "The caramel was so smooth and it was not sickly sweet at all. Delivery was right on time too, which I really appreciated.", "rating": 5 }
+      ]
     },
     {
       "id": "8",
       "title": "Chocolate Oreo / Hazelnut",
       "description": "Chocolate cake with Oreo and hazelnut. Nutty and chocolatey.",
       "category": "chocolate-cakes",
-      "price": 1800,
+      "price": 2000,
       "image": "Chocolate oreo.jpeg",
       "images": ["Chocolate oreo.jpeg"],
       "sizeServing": ["1 pound", "2 pound"],
       "tabDescription": "Chocolate Oreo / Hazelnut is made with care and quality ingredients. Our cakes and treats are baked fresh to order. The food colourings we use are food-grade and safe. Please note they may cause temporary stains on skin and surfaces; these are harmless and should come off with regular washing. These rates are for standard cakes. Prices may vary according to customization.",
       "tabIngredients": "Oreo, hazelnut, chocolate sponge. Wheat flour, sugar, butter, eggs, fresh cream, vanilla. May contain traces of nuts and dairy.",
       "tabNutritional": "Per 100g (approx): Energy 350kcal, Fat 18g, Saturates 11g, Carbohydrate 42g, Sugars 28g, Protein 5g, Salt 0.3g.",
-      "reviews": []
+      "reviews": [
+        { "author": "Fahad", "text": "That hazelnut flavour is unreal. Tasted better than the imported cakes and so much fresher. Highly recommended.", "rating": 5 }
+      ]
     },
     {
       "id": "14",
@@ -137,7 +151,7 @@
       "title": "Chocolate Fudge (Buttercream Frosting)",
       "description": "Rich chocolate fudge with buttercream frosting. Dense and indulgent.",
       "category": "chocolate-cakes",
-      "price": 1500,
+      "price": 1600,
       "image": "chocolate fudge in buttercream frosting.jpeg",
       "images": ["chocolate fudge in buttercream frosting.jpeg"],
       "sizeServing": ["1 pound", "2 pound"],
@@ -217,7 +231,9 @@
       "tabDescription": "Nikkah Mubarak gold roses is made with care and quality ingredients. Our cakes and treats are baked fresh to order. The food colourings we use are food-grade and safe. Please note they may cause temporary stains on skin and surfaces; these are harmless and should come off with regular washing. These rates are for standard cakes. Prices may vary according to customization.",
       "tabIngredients": "Vanilla sponge, buttercream, gold-toned decorations. Wheat flour, sugar, butter, eggs, fresh cream, vanilla. May contain traces of nuts and dairy.",
       "tabNutritional": "Per 100g (approx): Energy 350kcal, Fat 18g, Saturates 11g, Carbohydrate 42g, Sugars 28g, Protein 5g, Salt 0.3g.",
-      "reviews": []
+      "reviews": [
+        { "author": "Amber", "text": "Our nikkah cake was perfect. It matched our theme exactly and the guests could not stop complimenting how it tasted.", "rating": 5 }
+      ]
     },
     {
       "id": "21",
@@ -276,11 +292,137 @@
       "reviews": []
     },
     {
+      "id": "25",
+      "title": "Lotus Flavour Cake",
+      "description": "Lotus Biscoff crumb and caramel drip with a fresh cream swirl. Personalised message included.",
+      "category": "vanilla-cakes",
+      "price": 2000,
+      "image": "Lotus flavour.jpeg",
+      "images": ["Lotus flavour.jpeg"],
+      "sizeServing": ["1 pound", "2 pound"],
+      "tabDescription": "Lotus Flavour Cake is made with care and quality ingredients. Our cakes and treats are baked fresh to order. The food colourings we use are food-grade and safe. Please note they may cause temporary stains on skin and surfaces; these are harmless and should come off with regular washing. These rates are for standard cakes. Prices may vary according to customization.",
+      "tabIngredients": "Lotus Biscoff spread and biscuit crumb, caramel, vanilla sponge, fresh cream. Wheat flour, sugar, butter, eggs, fresh cream, vanilla. May contain traces of nuts and dairy.",
+      "tabNutritional": "Per 100g (approx): Energy 350kcal, Fat 18g, Saturates 11g, Carbohydrate 42g, Sugars 28g, Protein 5g, Salt 0.3g.",
+      "reviews": [
+        { "author": "Fasi", "text": "Got this for my birthday and the Biscoff crumb on top was the best part. Beautifully finished and tasted even better than it looked.", "rating": 5 }
+      ]
+    },
+    {
+      "id": "26",
+      "title": "Vanilla Pineapple Umrah Theme Cake",
+      "description": "Vanilla pineapple cake finished in white with gold leaf and pearls. Ideal for Umrah Mubarak celebrations.",
+      "category": "vanilla-cakes",
+      "price": 1400,
+      "image": "Pineapple cake umrah theme.jpeg",
+      "images": ["Pineapple cake umrah theme.jpeg"],
+      "sizeServing": ["1 pound", "2 pound"],
+      "tabDescription": "Vanilla Pineapple Umrah Theme Cake is made with care and quality ingredients. Our cakes and treats are baked fresh to order. The food colourings we use are food-grade and safe. Please note they may cause temporary stains on skin and surfaces; these are harmless and should come off with regular washing. These rates are for standard cakes. Prices may vary according to customization.",
+      "tabIngredients": "Pineapple, vanilla sponge, fresh cream, edible gold leaf and pearls. Wheat flour, sugar, butter, eggs, fresh cream, vanilla. May contain traces of nuts and dairy.",
+      "tabNutritional": "Per 100g (approx): Energy 350kcal, Fat 18g, Saturates 11g, Carbohydrate 42g, Sugars 28g, Protein 5g, Salt 0.3g.",
+      "reviews": [
+        { "author": "Nida", "text": "Ordered this to welcome my parents back from Umrah. The gold detailing looked so elegant and the pineapple cake was lovely and moist. Thank you!", "rating": 5 }
+      ]
+    },
+    {
+      "id": "27",
+      "title": "Three Milk & Chocolate Fudge Cake",
+      "description": "Three milk sponge paired with chocolate fudge, finished in mint green with piped roses and gold pearls.",
+      "category": "vanilla-cakes",
+      "price": 1700,
+      "image": "Three milk+ chocolate fudge.jpeg",
+      "images": ["Three milk+ chocolate fudge.jpeg"],
+      "sizeServing": ["1 pound", "2 pound"],
+      "tabDescription": "Three Milk & Chocolate Fudge Cake is made with care and quality ingredients. Our cakes and treats are baked fresh to order. The food colourings we use are food-grade and safe. Please note they may cause temporary stains on skin and surfaces; these are harmless and should come off with regular washing. These rates are for standard cakes. Prices may vary according to customization.",
+      "tabIngredients": "Three-milk soaked sponge, chocolate fudge, fresh cream, food-grade colours. Wheat flour, sugar, butter, eggs, fresh cream, vanilla. May contain traces of nuts and dairy.",
+      "tabNutritional": "Per 100g (approx): Energy 350kcal, Fat 18g, Saturates 11g, Carbohydrate 42g, Sugars 28g, Protein 5g, Salt 0.3g.",
+      "reviews": [
+        { "author": "Hamza", "text": "The mint green finish looked exactly like the picture and the three milk sponge was unbelievably moist. Made my sister's day completely.", "rating": 5 }
+      ]
+    },
+    {
+      "id": "28",
+      "title": "Chocolate Fudge Cherry Vintage Cake",
+      "description": "Vintage piped chocolate fudge cake crowned with fresh cherries. A classic showstopper.",
+      "category": "chocolate-cakes",
+      "price": 1600,
+      "image": "Chocolate fudge Vintage theme cherry cake.jpeg",
+      "images": ["Chocolate fudge Vintage theme cherry cake.jpeg"],
+      "sizeServing": ["1 pound", "2 pound"],
+      "tabDescription": "Chocolate Fudge Cherry Vintage Cake is made with care and quality ingredients. Our cakes and treats are baked fresh to order. The food colourings we use are food-grade and safe. Please note they may cause temporary stains on skin and surfaces; these are harmless and should come off with regular washing. These rates are for standard cakes. Prices may vary according to customization.",
+      "tabIngredients": "Chocolate sponge, chocolate fudge, fresh cream, fresh cherries. Wheat flour, sugar, butter, eggs, fresh cream, vanilla. May contain traces of nuts and dairy.",
+      "tabNutritional": "Per 100g (approx): Energy 350kcal, Fat 18g, Saturates 11g, Carbohydrate 42g, Sugars 28g, Protein 5g, Salt 0.3g.",
+      "reviews": [
+        { "author": "Zainab", "text": "The vintage piping was stunning, everyone was taking pictures before we cut it. The fresh cherries on top were such a lovely touch.", "rating": 5 }
+      ]
+    },
+    {
+      "id": "29",
+      "title": "Chocolate Fudge Vintage Ribbon Cake",
+      "description": "Vintage-style piping with pearls and satin ribbon bows. Elegant for birthdays and anniversaries.",
+      "category": "chocolate-cakes",
+      "price": 1600,
+      "image": "Chocolate fudge vintage cake.jpeg",
+      "images": ["Chocolate fudge vintage cake.jpeg"],
+      "sizeServing": ["1 pound", "2 pound"],
+      "tabDescription": "Chocolate Fudge Vintage Ribbon Cake is made with care and quality ingredients. Our cakes and treats are baked fresh to order. The food colourings we use are food-grade and safe. Please note they may cause temporary stains on skin and surfaces; these are harmless and should come off with regular washing. These rates are for standard cakes. Prices may vary according to customization.",
+      "tabIngredients": "Chocolate sponge, chocolate fudge, buttercream, edible pearls. Wheat flour, sugar, butter, eggs, fresh cream, vanilla. May contain traces of nuts and dairy.",
+      "tabNutritional": "Per 100g (approx): Energy 350kcal, Fat 18g, Saturates 11g, Carbohydrate 42g, Sugars 28g, Protein 5g, Salt 0.3g.",
+      "reviews": [
+        { "author": "Sadia", "text": "The ribbon bows and pearl details made it look like something out of a magazine. Ordered it for my friend and she was thrilled.", "rating": 5 }
+      ]
+    },
+    {
+      "id": "30",
+      "title": "Chocolate Fudge Buttercream Custom Cake",
+      "description": "Buttercream chocolate fudge cake with edible butterflies and a character topper. Fully customisable theme.",
+      "category": "chocolate-cakes",
+      "price": 1600,
+      "image": "Chocolate fudge buttercream customized cake.jpeg",
+      "images": ["Chocolate fudge buttercream customized cake.jpeg"],
+      "sizeServing": ["1 pound", "2 pound"],
+      "tabDescription": "Chocolate Fudge Buttercream Custom Cake is made with care and quality ingredients. Our cakes and treats are baked fresh to order. The food colourings we use are food-grade and safe. Please note they may cause temporary stains on skin and surfaces; these are harmless and should come off with regular washing. These rates are for standard cakes. Prices may vary according to customization.",
+      "tabIngredients": "Chocolate sponge, chocolate fudge, buttercream, edible printed toppers, food-grade colours. Wheat flour, sugar, butter, eggs, fresh cream, vanilla. May contain traces of nuts and dairy.",
+      "tabNutritional": "Per 100g (approx): Energy 350kcal, Fat 18g, Saturates 11g, Carbohydrate 42g, Sugars 28g, Protein 5g, Salt 0.3g.",
+      "reviews": []
+    },
+    {
+      "id": "31",
+      "title": "Chocolate Fudge Doll Theme Cake",
+      "description": "Colourful ombré buttercream with doll-theme toppers and star picks. A favourite for kids' birthdays.",
+      "category": "chocolate-cakes",
+      "price": 1600,
+      "image": "Chocolate fudge buttercream dora theme customized cake.jpeg",
+      "images": ["Chocolate fudge buttercream dora theme customized cake.jpeg"],
+      "sizeServing": ["1 pound", "2 pound"],
+      "tabDescription": "Chocolate Fudge Doll Theme Cake is made with care and quality ingredients. Our cakes and treats are baked fresh to order. The food colourings we use are food-grade and safe. Please note they may cause temporary stains on skin and surfaces; these are harmless and should come off with regular washing. These rates are for standard cakes. Prices may vary according to customization.",
+      "tabIngredients": "Chocolate sponge, chocolate fudge, buttercream, edible printed toppers, food-grade colours. Wheat flour, sugar, butter, eggs, fresh cream, vanilla. May contain traces of nuts and dairy.",
+      "tabNutritional": "Per 100g (approx): Energy 350kcal, Fat 18g, Saturates 11g, Carbohydrate 42g, Sugars 28g, Protein 5g, Salt 0.3g.",
+      "reviews": [
+        { "author": "Aiman", "text": "My daughter actually screamed when she saw it. The colours were so pretty and the cake itself was delicious, not just for show.", "rating": 5 }
+      ]
+    },
+    {
+      "id": "32",
+      "title": "Chocolate Fudge Football Theme Cake",
+      "description": "Football-theme buttercream cake with a personalised jersey topper and chocolate football. Great for match-day birthdays.",
+      "category": "chocolate-cakes",
+      "price": 1600,
+      "image": "Chocolate fudge buttercream ronaldo theme customized cake.jpeg",
+      "images": ["Chocolate fudge buttercream ronaldo theme customized cake.jpeg"],
+      "sizeServing": ["1 pound", "2 pound"],
+      "tabDescription": "Chocolate Fudge Football Theme Cake is made with care and quality ingredients. Our cakes and treats are baked fresh to order. The food colourings we use are food-grade and safe. Please note they may cause temporary stains on skin and surfaces; these are harmless and should come off with regular washing. These rates are for standard cakes. Prices may vary according to customization.",
+      "tabIngredients": "Chocolate sponge, chocolate fudge, buttercream, edible printed jersey topper, chocolate football. Wheat flour, sugar, butter, eggs, fresh cream, vanilla. May contain traces of nuts and dairy.",
+      "tabNutritional": "Per 100g (approx): Energy 350kcal, Fat 18g, Saturates 11g, Carbohydrate 42g, Sugars 28g, Protein 5g, Salt 0.3g.",
+      "reviews": [
+        { "author": "Mohsin", "text": "Got the jersey design with my name and number on it for my birthday and they absolutely nailed it. The chocolate fudge was rich and moist.", "rating": 5 }
+      ]
+    },
+    {
       "id": "9",
       "title": "Classic Cookie",
       "description": "Classic cookie, buttery and crisp. Per piece.",
       "category": "cookies",
-      "price": 200,
+      "price": 220,
       "image": "cookies products/dummy images/top-view-mix-cookies-with-chocolate-gingerbread-cookies-table.jpg",
       "images": ["cookies products/dummy images/top-view-mix-cookies-with-chocolate-gingerbread-cookies-table.jpg"],
       "sizeServing": ["Per piece"],
@@ -294,21 +436,23 @@
       "title": "Double Chocolate Cookie",
       "description": "Chocolate cookie with chocolate chips. Per piece.",
       "category": "cookies",
-      "price": 220,
+      "price": 250,
       "image": "cookies products/dummy images/view-baked-cookies-done-by-vegan-bakery.jpg",
       "images": ["cookies products/dummy images/view-baked-cookies-done-by-vegan-bakery.jpg"],
       "sizeServing": ["Per piece"],
       "tabDescription": "Double Chocolate Cookie is made with care and quality ingredients. Our cakes and treats are baked fresh to order. The food colourings we use are food-grade and safe. Please note they may cause temporary stains on skin and surfaces; these are harmless and should come off with regular washing.",
       "tabIngredients": "Chocolate, cocoa, chocolate chips. Wheat flour, sugar, butter, eggs, fresh cream, vanilla. May contain traces of nuts and dairy.",
       "tabNutritional": "Per 100g (approx): Energy 350kcal, Fat 18g, Saturates 11g, Carbohydrate 42g, Sugars 28g, Protein 5g, Salt 0.3g.",
-      "reviews": []
+      "reviews": [
+        { "author": "Areeba", "text": "Soft in the middle, crisp at the edges, exactly how a cookie should be. Ordered a dozen and regretted not getting more.", "rating": 5 }
+      ]
     },
     {
       "id": "11",
       "title": "Red Velvet Cookie",
       "description": "Red velvet cookie with cream cheese flavour. Per piece.",
       "category": "cookies",
-      "price": 220,
+      "price": 250,
       "image": "cookies products/dummy images/plate-sweeties-jar-biscuits.jpg",
       "images": ["cookies products/dummy images/plate-sweeties-jar-biscuits.jpg"],
       "sizeServing": ["Per piece"],

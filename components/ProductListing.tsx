@@ -4,7 +4,13 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './ProductListing.module.css';
-import { ALL_PRODUCTS, formatPrice, getProductImageUrl, type ProductCategory } from '@/lib/products';
+import {
+  ALL_PRODUCTS,
+  formatPrice,
+  getProductImageUrl,
+  sortNewestFirst,
+  type ProductCategory,
+} from '@/lib/products';
 
 const FILTERS: { value: ProductCategory; label: string }[] = [
   { value: 'all', label: 'All' },
@@ -18,9 +24,9 @@ export default function ProductListing() {
   const [filter, setFilter] = useState<ProductCategory>('all');
   const [cart, setCart] = useState<{ id: string; title: string; price: number; qty: number }[]>([]);
 
-  const filtered = filter === 'all'
-    ? ALL_PRODUCTS
-    : ALL_PRODUCTS.filter((p) => p.category === filter);
+  const filtered = sortNewestFirst(
+    filter === 'all' ? ALL_PRODUCTS : ALL_PRODUCTS.filter((p) => p.category === filter)
+  );
 
   const cartCount = cart.reduce((sum, i) => sum + i.qty, 0);
   const cartTotal = cart.reduce((sum, i) => sum + i.price * i.qty, 0);

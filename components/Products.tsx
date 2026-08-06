@@ -37,7 +37,7 @@ function productsForFilter(category: ProductCategory): Product[] {
 
 /** Home grid: surface new celebration cakes first, then fill from the shuffled list (no extra randomness). */
 function homePreviewRow(displayList: Product[], filter: ProductCategory): Product[] {
-  const prioritize = filter === 'all' || filter === 'vanilla-cakes';
+  const prioritize = filter === 'all' || filter === 'vanilla-cakes' || filter === 'chocolate-cakes';
   if (!prioritize) {
     return displayList.slice(0, 4);
   }
@@ -87,7 +87,7 @@ export default function Products() {
         <h2 className={styles.title}>Our Products</h2>
         <p className={styles.subtitle}>
           From celebration cakes to everyday cookies, each treat is made with quality ingredients and a personal touch.
-          {(filter === 'all' || filter === 'vanilla-cakes') && (
+          {(filter === 'all' || filter === 'vanilla-cakes' || filter === 'chocolate-cakes') && (
             <span className={styles.subtitleAccent}> New celebration designs are highlighted below.</span>
           )}
         </p>

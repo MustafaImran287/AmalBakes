@@ -14,7 +14,7 @@ const PROMISES = [
     icon: '/icons/icons8-gift-100.png',
   },
   {
-    title: '50+ orders',
+    title: '100+ orders',
     description: 'Trust built one order at a time. We take every slice seriously and deliver the same care, every single time.',
     icon: '/icons/icons8-wedding-cake-100.png',
   },
