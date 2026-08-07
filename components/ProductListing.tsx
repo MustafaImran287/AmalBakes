@@ -4,13 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './ProductListing.module.css';
-import {
-  ALL_PRODUCTS,
-  formatPrice,
-  getProductImageUrl,
-  sortNewestFirst,
-  type ProductCategory,
-} from '@/lib/products';
+import { formatPrice, getListingCards, type ProductCategory } from '@/lib/products';
 
 const FILTERS: { value: ProductCategory; label: string }[] = [
   { value: 'all', label: 'All' },
@@ -24,9 +18,8 @@ export default function ProductListing() {
   const [filter, setFilter] = useState<ProductCategory>('all');
   const [cart, setCart] = useState<{ id: string; title: string; price: number; qty: number }[]>([]);
 
-  const filtered = sortNewestFirst(
-    filter === 'all' ? ALL_PRODUCTS : ALL_PRODUCTS.filter((p) => p.category === filter)
-  );
+  const allCards = getListingCards();
+  const filtered = filter === 'all' ? allCards : allCards.filter((c) => c.category === filter);
 
   const cartCount = cart.reduce((sum, i) => sum + i.qty, 0);
   const cartTotal = cart.reduce((sum, i) => sum + i.price * i.qty, 0);
@@ -80,10 +73,10 @@ export default function ProductListing() {
 
       <ul className={styles.grid}>
         {filtered.map((item) => (
-          <li key={item.id} className={styles.card}>
+          <li key={item.key} className={styles.card}>
             <div className={styles.cardImageWrap}>
               <Image
-                src={getProductImageUrl(item)}
+                src={item.imageUrl}
                 alt={item.title}
                 fill
                 className={styles.cardImage}
@@ -96,7 +89,7 @@ export default function ProductListing() {
                 <p className={styles.cardPrice}>{formatPrice(item.price)}</p>
               </div>
               <p className={styles.cardDesc}>{item.description}</p>
-              <Link href={`/products/${item.id}`} className={styles.selectBtn}>
+              <Link href={item.href} className={styles.selectBtn}>
                 Select
               </Link>
             </div>

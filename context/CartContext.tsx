@@ -12,7 +12,9 @@ export type CartItem = {
   quantity: number;
   size?: string;
   frosting?: string;
+  theme?: string;
   message?: string;
+  chefNotes?: string;
   image?: string;
 };
 

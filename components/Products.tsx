@@ -88,7 +88,7 @@ export default function Products() {
         <p className={styles.subtitle}>
           From celebration cakes to everyday cookies, each treat is made with quality ingredients and a personal touch.
           {(filter === 'all' || filter === 'vanilla-cakes' || filter === 'chocolate-cakes') && (
-            <span className={styles.subtitleAccent}> New celebration designs are highlighted below.</span>
+            <span className={styles.subtitleAccent}> Choose any cake, then pick a theme to match your occasion.</span>
           )}
         </p>
 

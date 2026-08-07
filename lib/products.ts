@@ -20,17 +20,40 @@ export type Product = {
 const data = productsData as { products: Product[] };
 export const ALL_PRODUCTS: Product[] = data.products;
 
-/** Celebration / custom cakes (ids in data/products.json). Used for home spotlight and “New” badges. */
-export const NEW_DESIGN_PRODUCT_IDS = new Set<string>([
-  '16', '17', '18', '19', '20', '21', '22', '23', '24',
-  '25', '26', '27', '28', '29', '30', '31', '32',
-]);
+/** Recently added flavours (ids in data/products.json). Used for home spotlight and “New” badges. */
+export const NEW_DESIGN_PRODUCT_IDS = new Set<string>(['27']);
 
 /**
  * Prices in data/products.json are the fresh cream rate per pound.
  * Choosing butter cream adds this much per pound (e.g. Chocolate Fudge 1600 → 1900).
  */
 export const BUTTERCREAM_SURCHARGE_PER_POUND = 300;
+
+/** Flat add-on per cake when a decoration theme is chosen. "No theme" keeps the base price. */
+export const THEME_SURCHARGE = 500;
+
+/** `baseProductId` is the flavour a theme is showcased on in listings (customers can change it). */
+export type CakeTheme = { id: string; label: string; image: string; baseProductId: string };
+
+/** Decoration themes offered on cakes. `image` files live in public/cake products. */
+export const CAKE_THEMES: CakeTheme[] = [
+  { id: 'football', label: 'Football / jersey', image: 'Chocolate fudge buttercream ronaldo theme customized cake.jpeg', baseProductId: '6' },
+  { id: 'doll', label: 'Doll / cartoon', image: 'Chocolate fudge buttercream dora theme customized cake.jpeg', baseProductId: '6' },
+  { id: 'butterfly', label: 'Butterfly & character', image: 'Chocolate fudge buttercream customized cake.jpeg', baseProductId: '6' },
+  { id: 'vintage-cherry', label: 'Vintage with cherries', image: 'Chocolate fudge Vintage theme cherry cake.jpeg', baseProductId: '6' },
+  { id: 'vintage-ribbon', label: 'Vintage with ribbon bows', image: 'Chocolate fudge vintage cake.jpeg', baseProductId: '6' },
+  { id: 'umrah', label: 'Umrah Mubarak', image: 'Pineapple cake umrah theme.jpeg', baseProductId: '2' },
+  { id: 'spiderman', label: 'Superhero', image: 'spiderman-3rd-birthday-cake.jpeg', baseProductId: '1' },
+  { id: 'baby-milestone', label: 'Baby milestone bear', image: 'three-month-bear-milestone-cake.jpeg', baseProductId: '1' },
+  { id: 'nikkah', label: 'Nikkah Mubarak', image: 'nikkah-mubarak-amber-adeel-gold-roses.jpeg', baseProductId: '1' },
+  { id: 'welcome-home', label: 'Welcome home', image: 'welcome-home-mr-mrs-cake.jpeg', baseProductId: '1' },
+  { id: 'vintage-floral', label: 'Vintage floral (dusty rose)', image: 'dusty-rose-pearl-vintage-floral-buttercream-cake.jpeg', baseProductId: '1' },
+  { id: 'floral-marble', label: 'Floral marble', image: 'yellow-rose-mauve-floral-buttercream-marble.jpeg', baseProductId: '1' },
+  { id: 'minimalist', label: 'Minimalist bento', image: 'minimalist-cream-bento-cake-brown-accents.jpeg', baseProductId: '1' },
+  { id: 'mint-green', label: 'Mint green birthday', image: 'happy-birthday-shahzaib-mint-green-cake.jpeg', baseProductId: '1' },
+  { id: 'branded', label: 'Branded / logo', image: 'amal-bakes-mint-green-branded-round-cake.jpeg', baseProductId: '1' },
+  { id: 'ramzan', label: 'Ramzan', image: 'Ramzan Cake.jpeg', baseProductId: '1' },
+];
 
 /**
  * Listing order: newest designs first (highest id within NEW_DESIGN_PRODUCT_IDS),
@@ -82,6 +105,55 @@ export function getProductImageUrls(product: Product): string[] {
 
 export function getProductById(id: string): Product | undefined {
   return ALL_PRODUCTS.find((p) => p.id === id);
+}
+
+/** A card on the products listing: either a flavour, or a theme shown on its base flavour. */
+export type ListingCard = {
+  key: string;
+  title: string;
+  description: string;
+  price: number;
+  imageUrl: string;
+  href: string;
+  category: ProductCategory;
+  isNew: boolean;
+};
+
+function productCard(p: Product): ListingCard {
+  return {
+    key: `p-${p.id}`,
+    title: p.title,
+    description: p.description,
+    price: p.price,
+    imageUrl: getProductImageUrl(p),
+    href: `/products/${p.id}`,
+    category: p.category,
+    isNew: NEW_DESIGN_PRODUCT_IDS.has(p.id),
+  };
+}
+
+/** Themed designs link to their flavour with the theme already selected, so nothing contradicts. */
+function themeCard(theme: CakeTheme, base: Product): ListingCard {
+  return {
+    key: `t-${theme.id}`,
+    title: `${base.title} — ${theme.label} theme`,
+    description: `Our ${theme.label} theme on ${base.title}. Colours, toppers and wording are made to your order.`,
+    price: base.price + THEME_SURCHARGE,
+    imageUrl: `${IMAGE_BASE}/${encodeURIComponent(theme.image)}`,
+    href: `/products/${base.id}?theme=${theme.id}`,
+    category: base.category,
+    isNew: false,
+  };
+}
+
+/** Themed designs first (they show what we can do), then the plain flavours and treats. */
+export function getListingCards(): ListingCard[] {
+  const themes: ListingCard[] = [];
+  for (const theme of CAKE_THEMES) {
+    const base = getProductById(theme.baseProductId);
+    if (base) themes.push(themeCard(theme, base));
+  }
+  return [...themes, ...sortNewestFirst(ALL_PRODUCTS).map(productCard)];
 }
 
 export function formatPrice(n: number) {

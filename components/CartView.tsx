@@ -11,13 +11,13 @@ import styles from './CartView.module.css';
 const WHATSAPP_NUMBER = '923365119740';
 
 function buildWhatsAppMessage(
-  items: { title: string; quantity: number; price: number; size?: string; frosting?: string; message?: string }[],
+  items: { title: string; quantity: number; price: number; size?: string; frosting?: string; theme?: string; message?: string; chefNotes?: string }[],
   totalPrice: number,
   deliveryAddress?: string
 ) {
   const lines = items.map(
     (i) =>
-      `• ${i.title} x${i.quantity} — ${formatPrice(i.price * i.quantity)}${i.size ? ` (${i.size})` : ''}${i.frosting ? ` — Frosting: ${i.frosting}` : ''}${i.message ? ` — Message: ${i.message}` : ''}`
+      `• ${i.title} x${i.quantity} — ${formatPrice(i.price * i.quantity)}${i.size ? ` (${i.size})` : ''}${i.frosting ? ` — Frosting: ${i.frosting}` : ''}${i.theme ? ` — Theme: ${i.theme}` : ''}${i.message ? ` — Message: ${i.message}` : ''}${i.chefNotes ? ` — Notes for chef: ${i.chefNotes}` : ''}`
   );
   let msg = `Hi, I'd like to order from Amal Bakes:\n\n${lines.join('\n')}\n\nTotal: ${formatPrice(totalPrice)}`;
   if (deliveryAddress?.trim()) {
@@ -71,7 +71,9 @@ export default function CartView() {
               <span className={styles.rowTitle}>{item.title}</span>
               {item.size && <span className={styles.rowMeta}>Size: {item.size}</span>}
               {item.frosting && <span className={styles.rowMeta}>Frosting: {item.frosting}</span>}
-              {item.message && <span className={styles.rowMeta}>Message: {item.message}</span>}
+              {item.theme && <span className={styles.rowMeta}>Theme: {item.theme}</span>}
+              {item.message && <span className={styles.rowMeta}>Message on cake: {item.message}</span>}
+              {item.chefNotes && <span className={styles.rowMeta}>Notes for chef: {item.chefNotes}</span>}
               <span className={styles.rowPrice}>{formatPrice(item.price * item.quantity)}</span>
             </div>
             <div className={styles.rowActions}>
