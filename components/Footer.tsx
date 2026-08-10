@@ -10,7 +10,7 @@ const SOCIAL = [
 
 const CONTACT = {
   phone: '+92 336 5119740',
-  email: 'hello@amalbakes.com',
+  email: 'amalbakes18@gmail.com',
   cities: 'Rawalpindi & Islamabad',
   country: 'Pakistan',
   delivery: 'We deliver locally in Rawalpindi and Islamabad.',
