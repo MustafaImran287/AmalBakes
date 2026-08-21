@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { assetUrl } from '@/lib/basePath';
 import styles from './LimitedOffers.module.css';
 
-const WHATSAPP_NUMBER = '923365119740';
+const WHATSAPP_NUMBER = '923145305046';
 
 const LIMITED_OFFER = {
   badge: 'Special offer',

@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import styles from './CustomCakeForm.module.css';
 
-const WHATSAPP_NUMBER = '923365119740';
+const WHATSAPP_NUMBER = '923145305046';
 
 const FROSTING_OPTIONS = [
   { value: 'fresh-cream', label: 'Fresh Cream' },

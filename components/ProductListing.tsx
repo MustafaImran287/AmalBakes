@@ -41,7 +41,7 @@ export default function ProductListing() {
             )}
             {cart.length > 0 && (
               <a
-                href={`https://wa.me/923365119740?text=${encodeURIComponent(whatsappOrderText)}`}
+                href={`https://wa.me/923145305046?text=${encodeURIComponent(whatsappOrderText)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.orderBtn}

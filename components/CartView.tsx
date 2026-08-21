@@ -8,7 +8,7 @@ import { formatPrice } from '@/lib/products';
 import { assetUrl } from '@/lib/basePath';
 import styles from './CartView.module.css';
 
-const WHATSAPP_NUMBER = '923365119740';
+const WHATSAPP_NUMBER = '923145305046';
 
 function buildWhatsAppMessage(
   items: { title: string; quantity: number; price: number; size?: string; frosting?: string; theme?: string; message?: string; chefNotes?: string }[],
